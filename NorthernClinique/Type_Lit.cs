@@ -17,13 +17,13 @@ namespace NorthernClinique
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Type_Lit()
         {
-            this.Lits = new HashSet<Lit>();
+            this.Lit = new HashSet<Lit>();
         }
     
         public int IDType { get; set; }
         public string description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Lit> Lits { get; set; }
+        public virtual ICollection<Lit> Lit { get; set; }
     }
 }

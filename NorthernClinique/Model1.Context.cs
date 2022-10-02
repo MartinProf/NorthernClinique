@@ -13,10 +13,10 @@ namespace NorthernClinique
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NorthernEntities : DbContext
+    public partial class Northern_Lights_HospitalEntities : DbContext
     {
-        public NorthernEntities()
-            : base("name=NorthernEntities")
+        public Northern_Lights_HospitalEntities()
+            : base("name=Northern_Lights_HospitalEntities")
         {
         }
     
@@ -25,12 +25,12 @@ namespace NorthernClinique
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admission> Admissions { get; set; }
-        public virtual DbSet<Assurance> Assurances { get; set; }
-        public virtual DbSet<Departement> Departements { get; set; }
-        public virtual DbSet<Lit> Lits { get; set; }
-        public virtual DbSet<Medecin> Medecins { get; set; }
-        public virtual DbSet<Patient> Patients { get; set; }
+        public virtual DbSet<Admission> Admission { get; set; }
+        public virtual DbSet<Assurance> Assurance { get; set; }
+        public virtual DbSet<Departement> Departement { get; set; }
+        public virtual DbSet<Lit> Lit { get; set; }
+        public virtual DbSet<Medecin> Medecin { get; set; }
+        public virtual DbSet<Patient> Patient { get; set; }
         public virtual DbSet<Type_Lit> Type_Lit { get; set; }
     }
 }
