@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="Acceuil" Height="450" Width="800">
+        Title="Acceuil" Height="202" Width="550" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid HorizontalAlignment="Center" Height="108" Margin="0,26,0,0" VerticalAlignment="Top" Width="485">
+            <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Bahnschrift SemiBold Condensed" FontSize="22" Background="#FFB5D2F1" BorderBrush="Black" BorderThickness="2,2,2,2"/>
+            <PasswordBox x:Name="pwLogin" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Bahnschrift SemiBold Condensed" FontSize="22" Background="#FFB5D2F1" BorderBrush="Black" BorderThickness="2,2,2,2" Margin="0,30,0,0"/>
+            <ComboBox x:Name="cboLogin" HorizontalAlignment="Left" Margin="335,30,0,0" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Bahnschrift SemiBold Condensed" FontSize="22" BorderBrush="Black" BorderThickness="2,2,2,2">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FFB5D2F1" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Name="admin" Content="Administrateur"></ComboBoxItem>
+                <ComboBoxItem Name="med" Content="Medecin"></ComboBoxItem>
+                <ComboBoxItem Name="prep" Content="Prepose"></ComboBoxItem>
+            </ComboBox>
+            <Label Content="Nom d'utilisateur" HorizontalAlignment="Left" Margin="4,0,0,0" VerticalAlignment="Top" FontFamily="Sitka Subheading" FontSize="16" FontWeight="Bold"/>
+            <Label Content="Mot de passe" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Sitka Subheading" FontSize="16" FontWeight="Bold"/>
+            <Label Content="Poste occupé" HorizontalAlignment="Left" Margin="358,0,0,0" VerticalAlignment="Top" FontFamily="Sitka Subheading" FontSize="16" FontWeight="Bold"/>
+            <Button x:Name="btnLogin" Content="VALIDER" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Sitka Subheading" FontSize="18" BorderThickness="2,2,2,2" Click="btnLogin_Click">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="#FFB5D2F1" Offset="0.617"/>
+                    </RadialGradientBrush>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+
+        </Grid>
+
     </Grid>
 </Window>

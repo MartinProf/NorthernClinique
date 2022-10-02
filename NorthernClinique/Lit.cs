@@ -17,7 +17,7 @@ namespace NorthernClinique
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Lit()
         {
-            this.Admissions = new HashSet<Admission>();
+            this.Admission = new HashSet<Admission>();
         }
     
         public int Numero_lit { get; set; }
@@ -26,7 +26,7 @@ namespace NorthernClinique
         public int IDDepartement { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Admission> Admissions { get; set; }
+        public virtual ICollection<Admission> Admission { get; set; }
         public virtual Departement Departement { get; set; }
         public virtual Type_Lit Type_Lit { get; set; }
     }
