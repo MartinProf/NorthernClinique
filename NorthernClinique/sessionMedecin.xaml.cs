@@ -33,11 +33,32 @@ namespace NorthernClinique
             var query =
                 from a in BDD.Admission
                 join p in BDD.Patient on a.NSS equals p.NSS
-                select new { a.NSS, p.nom, p.prenom, a.IDMedecin, a.Numero_lit, a.date_admission, a.date_du_congé };
+                join l in BDD.Lit on a.Numero_lit equals l.Numero_lit
+                join m in BDD.Medecin on a.IDMedecin equals m.IDMedecin
+                select new { a.NSS, Patient = p.nom + p.prenom, ID = a.IDMedecin, Medecin = m.nom + m.prenom, Lit = a.Numero_lit, Status = l.occupe, Admission = a.date_admission, Conge = a.date_du_congé };
 
             dgConge.DataContext = query.ToList(); 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Admission admission = dgConge.SelectedItem as Admission;
+            ((Lit)dgConge.SelectedItem).occupe = false;
         
+
+            admission.Lit.occupe = ((Lit)dgConge.SelectedItem).occupe;
+            admission.date_du_congé = dpConge.SelectedDate;
+            
+
+            try
+            {
+                BDD.SaveChanges();
+                MessageBox.Show("Congé accordé!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
