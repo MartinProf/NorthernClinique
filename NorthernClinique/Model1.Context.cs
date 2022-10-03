@@ -13,10 +13,10 @@ namespace NorthernClinique
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Northern_Lights_HospitalEntities : DbContext
+    public partial class Northern_Lights_HospitalEntities1 : DbContext
     {
-        public Northern_Lights_HospitalEntities()
-            : base("name=Northern_Lights_HospitalEntities")
+        public Northern_Lights_HospitalEntities1()
+            : base("name=Northern_Lights_HospitalEntities1")
         {
         }
     

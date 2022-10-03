@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="sessionPrepose" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Processus d'admission" HorizontalAlignment="Left" Margin="190,182,0,0" VerticalAlignment="Top" Height="58" Width="148" Click="Button_Click"/>
+        <Button Content="Recherche Patient" HorizontalAlignment="Left" Margin="465,182,0,0" VerticalAlignment="Top" Height="58" Width="148" Click="Button_Click_1"/>
+
     </Grid>
 </Window>

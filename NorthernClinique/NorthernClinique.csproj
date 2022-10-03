@@ -104,6 +104,12 @@
     <Compile Include="Patient.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProcessusAdmission.xaml.cs">
+      <DependentUpon>ProcessusAdmission.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecherchePatient.xaml.cs">
+      <DependentUpon>RecherchePatient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sessionAdmin.xaml.cs">
       <DependentUpon>sessionAdmin.xaml</DependentUpon>
     </Compile>
@@ -154,6 +160,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Acceuil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProcessusAdmission.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecherchePatient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

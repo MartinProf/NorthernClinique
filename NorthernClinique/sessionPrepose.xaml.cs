@@ -23,5 +23,19 @@ namespace NorthernClinique
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessusAdmission processusAdmission = new ProcessusAdmission();
+            processusAdmission.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            RecherchePatient recherchePatient = new RecherchePatient();
+            recherchePatient.Show();
+            this.Close();
+        }
     }
 }
