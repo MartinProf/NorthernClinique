@@ -34,5 +34,6 @@ namespace NorthernClinique
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Admission> Admission { get; set; }
         public virtual Assurance Assurance { get; set; }
+
     }
 }
