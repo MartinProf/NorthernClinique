@@ -15,27 +15,25 @@ using System.Windows.Shapes;
 namespace NorthernClinique
 {
     /// <summary>
-    /// Logique d'interaction pour sessionAdmin.xaml
+    /// Logique d'interaction pour adminConsultation.xaml
     /// </summary>
-    public partial class sessionAdmin : Window
+    public partial class adminConsultation : Window
     {
-        public sessionAdmin()
+        public adminConsultation()
         {
             InitializeComponent();
         }
 
-        private void btnPersonnel_Click(object sender, RoutedEventArgs e)
+        private void MenuQuitter_Click(object sender, RoutedEventArgs e)
         {
-            Window window = new adminPersonnel();
-            this.Hide();
+            Window window = new sessionAdmin();
             window.Show();
+            this.Close();
         }
 
-        private void btnConsultation_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Window window = new adminConsultation();
-            this.Hide();
-            window.Show();
+            frameConsul.Content = new tableauConsultation();
         }
     }
 }
