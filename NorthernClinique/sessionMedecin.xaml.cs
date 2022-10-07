@@ -40,15 +40,15 @@ namespace NorthernClinique
             dgConge.DataContext = query.ToList(); 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             Admission admission = dgConge.SelectedItem as Admission;
             ((Lit)dgConge.SelectedItem).occupe = false;
-        
+
 
             admission.Lit.occupe = ((Lit)dgConge.SelectedItem).occupe;
             admission.date_du_congé = dpConge.SelectedDate;
-            
+
 
             try
             {
