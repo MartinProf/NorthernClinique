@@ -6,17 +6,17 @@
       xmlns:local="clr-namespace:NorthernClinique"
       mc:Ignorable="d" 
       d:DesignHeight="416" d:DesignWidth="800"
-      Title="SupprimerPerso">
+      Title="SupprimerPerso" Loaded="Page_Loaded">
 
     <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
         <Label Content="Supprimer Medecin" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="351" FontSize="36" FontWeight="Bold"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="500,325,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontWeight="Bold" Click="btnAjouter_Click"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="500,325,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontWeight="Bold" Click="btnSupprimer_Click"/>
         <Label Content="ID medecin" HorizontalAlignment="Left" Height="49" Margin="90,150,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
         <Label Content="Nom" HorizontalAlignment="Left" Height="49" Margin="312,150,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
         <Label Content="Prenom" HorizontalAlignment="Left" Height="49" Margin="519,150,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
         <TextBox x:Name="textBoxNom" HorizontalAlignment="Left" Height="44" Margin="312,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162" FontSize="24" IsReadOnly="True"/>
         <TextBox x:Name="textBoxPrenom" HorizontalAlignment="Left" Height="44" Margin="519,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162" FontSize="24" IsReadOnly="True"/>
-        <ComboBox x:Name="comboBIDMedecin" HorizontalAlignment="Left" Height="44" Margin="90,225,0,0" VerticalAlignment="Top" Width="162" FontSize="24"/>
+        <ComboBox x:Name="comboBIDMedecin" HorizontalAlignment="Left" Height="44" Margin="90,225,0,0" VerticalAlignment="Top" Width="162" FontSize="24" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDMedecin" SelectionChanged="comboBIDMedecin_SelectionChanged"/>
 
     </Grid>
 </Page>
