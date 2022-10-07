@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="sessionAdmin" Height="450" Width="800">
+        Title="Administration" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="btnPersonnel" Content="Personnel" HorizontalAlignment="Left" Height="150" VerticalAlignment="Center" Width="400" FontSize="36" Click="btnPersonnel_Click"/>
+        <Button x:Name="btnConsultation" Content="Consultation" HorizontalAlignment="Left" Height="150" Margin="405,0,0,0" VerticalAlignment="Center" Width="395" FontSize="36" Click="btnConsultation_Click"/>
     </Grid>
 </Window>
