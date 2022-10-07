@@ -13,8 +13,8 @@
         <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="500,325,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontWeight="Bold" Click="btnAjouter_Click"/>
         <Label Content="Nom" HorizontalAlignment="Left" Height="49" Margin="219,128,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
         <Label Content="Prenom" HorizontalAlignment="Left" Height="49" Margin="426,128,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
-        <TextBox x:Name="textBoxNom" HorizontalAlignment="Left" Height="44" Margin="219,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="162" FontSize="24"/>
-        <TextBox x:Name="textBoxPrenom" HorizontalAlignment="Left" Height="44" Margin="426,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="162" FontSize="24"/>
+        <TextBox x:Name="textBoxNom" HorizontalAlignment="Left" Height="44" Margin="219,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="162" FontSize="24"/>
+        <TextBox x:Name="textBoxPrenom" HorizontalAlignment="Left" Height="44" Margin="426,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="162" FontSize="24"/>
 
     </Grid>
 </Page>

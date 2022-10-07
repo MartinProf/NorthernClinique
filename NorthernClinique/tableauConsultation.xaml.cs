@@ -20,9 +20,20 @@ namespace NorthernClinique
     /// </summary>
     public partial class tableauConsultation : Page
     {
+        Northern_Lights_HospitalEntities1 myBDD;
         public tableauConsultation()
         {
             InitializeComponent();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            myBDD = new Northern_Lights_HospitalEntities1();
+
+            var query =
+                from m in myBDD.Medecin
+                select new { Médecin_traitant = m.prenom + " " + m.nom };
+            dataGridConsul.DataContext = query.ToList();
         }
     }
 }
