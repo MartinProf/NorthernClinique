@@ -8,9 +8,9 @@
         Title="Medecin" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid HorizontalAlignment="Left" Width="800">
         <Label Content="Congé patients" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="273" FontSize="36" FontWeight="Bold"/>
-        <DatePicker x:Name="dpConge" HorizontalAlignment="Left" Margin="65,333,0,0" VerticalAlignment="Top" Height="42" Width="187" FontSize="24"/>
+        <DatePicker x:Name="dpConge" HorizontalAlignment="Left" Margin="65,333,0,0" VerticalAlignment="Top" Height="42" Width="291" FontSize="24"/>
         <Label Content="Date du congé" HorizontalAlignment="Left" Margin="65,264,0,0" VerticalAlignment="Top" Width="187" FontSize="24" FontWeight="Bold"/>
-        <Button x:Name="btnAutoriser" Content="Autoriser" HorizontalAlignment="Left" Margin="500,325,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontWeight="Bold" Click="btnAjouter_Click"/>
+        <Button x:Name="btnAutoriser" Content="Autoriser" HorizontalAlignment="Left" Margin="500,325,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontWeight="Bold" Click="btnAutoriser_Click"/>
         <DataGrid x:Name="dgConge" Margin="32,103,32,188" AutoGenerateColumns="True" ItemsSource="{Binding}"/>
     </Grid>
 </Window>

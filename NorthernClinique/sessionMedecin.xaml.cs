@@ -30,24 +30,20 @@ namespace NorthernClinique
         {
             BDD = new Northern_Lights_HospitalEntities1();
 
-            var query =
-                from a in BDD.Admission
-                join p in BDD.Patient on a.NSS equals p.NSS
-                join l in BDD.Lit on a.Numero_lit equals l.Numero_lit
-                join m in BDD.Medecin on a.IDMedecin equals m.IDMedecin
-                select new { a.NSS, Patient = p.nom + p.prenom, ID = a.IDMedecin, Medecin = m.nom + m.prenom, Lit = a.Numero_lit, Status = l.occupe, Admission = a.date_admission, Conge = a.date_du_congé };
-
-            dgConge.DataContext = query.ToList(); 
+            dgConge.DataContext = generationDataGrid();
+            dpConge.SelectedDate = DateTime.Now;
         }
 
-        private void btnAjouter_Click(object sender, RoutedEventArgs e)
+        private void btnAutoriser_Click(object sender, RoutedEventArgs e)
         {
-            Admission admission = dgConge.SelectedItem as Admission;
-            ((Lit)dgConge.SelectedItem).occupe = false;
+            BDD = new Northern_Lights_HospitalEntities1();
 
+            int leNSS = 1;
 
-            admission.Lit.occupe = ((Lit)dgConge.SelectedItem).occupe;
-            admission.date_du_congé = dpConge.SelectedDate;
+            var unPatient = BDD.Admission.Where(s => s.NSS == leNSS).First();
+            unPatient.date_du_congé = dpConge.SelectedDate;
+
+            //update Admission SET date_du_congé = 2022 - 01 - 01 WHERE IDAdmission = 1;
 
 
             try
@@ -59,6 +55,18 @@ namespace NorthernClinique
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private List<dynamic> generationDataGrid() 
+        {
+            var query =
+                from a in BDD.Admission
+                join p in BDD.Patient on a.NSS equals p.NSS
+                join l in BDD.Lit on a.Numero_lit equals l.Numero_lit
+                join m in BDD.Medecin on a.IDMedecin equals m.IDMedecin
+                select new { a.NSS, Patient = p.nom + p.prenom, ID = a.IDMedecin, Medecin = m.nom + m.prenom, Lit = a.Numero_lit, Status = l.occupe, Admission = a.date_admission, Conge = a.date_du_congé };
+
+            return query.AsEnumerable().Cast<dynamic>().ToList<dynamic>();
         }
     }
 }
