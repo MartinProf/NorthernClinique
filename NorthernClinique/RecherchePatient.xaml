@@ -7,36 +7,34 @@
         mc:Ignorable="d"
         Title="RecherchePatient" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DatePicker HorizontalAlignment="Left" Margin="430,70,0,0" VerticalAlignment="Top"/>
-        <Label Content="Date Naissance" HorizontalAlignment="Left" Margin="438,44,0,0" VerticalAlignment="Top" Width="107"/>
-        <TextBox x:Name="txtAdresse" HorizontalAlignment="Left" Margin="77,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtCodePostal" HorizontalAlignment="Left" Margin="525,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtProvince" HorizontalAlignment="Left" Margin="370,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtVille" HorizontalAlignment="Left" Margin="228,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Adresse" HorizontalAlignment="Left" Margin="79,126,0,0" VerticalAlignment="Top"/>
-        <Label Content="Code Postal" HorizontalAlignment="Left" Margin="525,126,0,0" VerticalAlignment="Top"/>
-        <Label Content="Province" HorizontalAlignment="Left" Margin="370,126,0,0" VerticalAlignment="Top"/>
-        <Label Content="Ville" HorizontalAlignment="Left" Margin="228,126,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Margin="77,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Telephone" HorizontalAlignment="Left" Margin="79,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.42,-0.17"/>
-        <Button Content="Valider Admission" HorizontalAlignment="Left" Margin="627,376,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.178,0.517" Width="116" Height="32"/>
-        <Label Content="Cie. assurance" HorizontalAlignment="Left" Margin="222,191,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbChirurgie" Content="Chirurgie" HorizontalAlignment="Left" Margin="332,294,0,0" VerticalAlignment="Top"/>
-        <Label Content="Medecin" HorizontalAlignment="Left" Margin="400,191,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboAssurance" HorizontalAlignment="Left" Margin="222,215,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="nom_compagnie"/>
-        <ComboBox x:Name="cboMedecin" HorizontalAlignment="Left" Margin="378,215,0,0" VerticalAlignment="Top" Width="120"/>
-        <GroupBox Header="GroupBox" Margin="79,271,521,42">
-            <Grid>
-                <CheckBox Content="Location televiseur" HorizontalAlignment="Left" Margin="36,22,0,0" VerticalAlignment="Top"/>
-                <CheckBox Content="Location telephone" HorizontalAlignment="Left" Margin="36,61,0,0" VerticalAlignment="Top"/>
-            </Grid>
-        </GroupBox>
-        <ComboBox x:Name="cboTypeChambre" HorizontalAlignment="Left" Margin="542,213,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.082,0.174"/>
-        <Label Content="Type de chambre" HorizontalAlignment="Left" Margin="542,191,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboTypeLit" HorizontalAlignment="Left" Margin="441,291,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Type de lit" HorizontalAlignment="Left" Margin="442,265,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnAjouterPatient" Content="Ajouter Patient" HorizontalAlignment="Left" Margin="509,374,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.178,0.517" Width="116" Height="32" Click="btnAjouterPatient_Click"/>
         <ComboBox x:Name="cboPatient" HorizontalAlignment="Left" Margin="77,66,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Patient"/>
         <Label Content="Patient" HorizontalAlignment="Left" Margin="79,40,0,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Info patient" Margin="32,117,32,88">
+            <Grid>
+                <TextBox x:Name="txtNSS" HorizontalAlignment="Left" Margin="28,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="NSS" HorizontalAlignment="Left" Margin="28,3,0,0" VerticalAlignment="Top" Width="86"/>
+                <DatePicker HorizontalAlignment="Left" Margin="177,23,0,0" VerticalAlignment="Top"/>
+                <Label Content="Date Naissance" HorizontalAlignment="Left" Margin="177,-2,0,0" VerticalAlignment="Top" Width="107"/>
+                <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="369,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.337,0.393"/>
+                <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="534,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtAdresse" HorizontalAlignment="Left" Margin="26,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtCodePostal" HorizontalAlignment="Left" Margin="474,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtProvince" HorizontalAlignment="Left" Margin="319,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtVille" HorizontalAlignment="Left" Margin="177,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Adresse" HorizontalAlignment="Left" Margin="28,85,0,0" VerticalAlignment="Top"/>
+                <Label Content="Code Postal" HorizontalAlignment="Left" Margin="474,85,0,0" VerticalAlignment="Top"/>
+                <Label Content="Province" HorizontalAlignment="Left" Margin="319,85,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ville" HorizontalAlignment="Left" Margin="177,85,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Margin="26,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Telephone" HorizontalAlignment="Left" Margin="28,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.42,-0.17"/>
+                <Label Content="Nom" HorizontalAlignment="Left" Margin="369,0,0,0" VerticalAlignment="Top"/>
+                <Label Content="Prenom" HorizontalAlignment="Left" Margin="534,0,0,0" VerticalAlignment="Top"/>
+                <Label Content="Cie. assurance" HorizontalAlignment="Left" Margin="188,150,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cboAssurance" HorizontalAlignment="Left" Margin="188,174,0,0" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btnAdmission" Content="Procéder admission" HorizontalAlignment="Left" Margin="647,370,0,0" VerticalAlignment="Top" Height="36" Width="106" Click="Button_Click"/>
 
     </Grid>
 </Window>
