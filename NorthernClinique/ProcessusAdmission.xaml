@@ -5,33 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="ProcessusAdmission" Height="450" Width="800">
+        Title="ProcessusAdmission" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="btnValiderAdmission" Content="Valider Admission" HorizontalAlignment="Left" Margin="627,376,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.178,0.517" Width="116" Height="32"/>
-        <CheckBox x:Name="cbChirurgie" Content="Chirurgie" HorizontalAlignment="Left" Margin="480,312,0,0" VerticalAlignment="Top"/>
-        <Label Content="Medecin" HorizontalAlignment="Left" Margin="502,244,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboMedecin" HorizontalAlignment="Left" Margin="480,268,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnValiderAdmission" Content="Valider Admission" HorizontalAlignment="Left" Margin="648,383,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.178,0.517" Width="116" Height="32" Click="btnValiderAdmission_Click"/>
+        <CheckBox x:Name="checkbChirurgie" Content="Chirurgie" HorizontalAlignment="Left" Margin="313,332,0,0" VerticalAlignment="Top"/>
+        <Label Content="Medecin" HorizontalAlignment="Left" Margin="91,177,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboMedecin" HorizontalAlignment="Left" Margin="69,201,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDMedecin" SelectionChanged="cboMedecin_SelectionChanged"/>
         <GroupBox Header="Services" Margin="79,271,521,42">
             <Grid>
-                <CheckBox Content="Location televiseur" HorizontalAlignment="Left" Margin="36,22,0,0" VerticalAlignment="Top"/>
-                <CheckBox Content="Location telephone" HorizontalAlignment="Left" Margin="36,61,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="cBoxTelevision" Content="Location televiseur" HorizontalAlignment="Left" Margin="36,22,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="cbTelephone" Content="Location telephone" HorizontalAlignment="Left" Margin="36,61,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
-        <ComboBox x:Name="cboTypeChambre" HorizontalAlignment="Left" Margin="644,266,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.082,0.174"/>
-        <Label Content="Type de chambre" HorizontalAlignment="Left" Margin="644,244,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboTypeLit" HorizontalAlignment="Left" Margin="644,339,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Type de lit" HorizontalAlignment="Left" Margin="644,306,0,0" VerticalAlignment="Top"/>
-        <Grid Margin="35,80,41,286">
-            <TextBox x:Name="txtNSS" HorizontalAlignment="Left" Margin="28,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cboTypeChambre" HorizontalAlignment="Left" Margin="626,189,0,0" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.082,0.174" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="nom_departement" SelectionChanged="cboTypeChambre_SelectionChanged"/>
+        <Label Content="Département" HorizontalAlignment="Left" Margin="626,150,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboTypeLit" HorizontalAlignment="Left" Margin="626,316,0,0" VerticalAlignment="Top" Width="140" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="description"/>
+        <Label Content="Type de lit" HorizontalAlignment="Left" Margin="626,283,0,0" VerticalAlignment="Top"/>
+        <Grid Margin="35,80,261,286">
             <Label Content="NSS" HorizontalAlignment="Left" Margin="28,3,0,0" VerticalAlignment="Top" Width="86"/>
-            <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="197,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.337,0.393"/>
-            <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="362,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="197,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.337,0.393" IsEnabled="False"/>
+            <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="362,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
             <Label Content="Nom" HorizontalAlignment="Left" Margin="197,3,0,0" VerticalAlignment="Top"/>
             <Label Content="Prenom" HorizontalAlignment="Left" Margin="362,3,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbNSS" HorizontalAlignment="Left" Margin="28,27,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="NSS" SelectionChanged="cbNSS_SelectionChanged"/>
         </Grid>
-        <DatePicker x:Name="dpChirurgie" HorizontalAlignment="Left" Margin="455,350,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboNumLit" HorizontalAlignment="Left" Margin="309,350,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Numéro Lit" HorizontalAlignment="Left" Margin="337,327,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datepChirurgie" HorizontalAlignment="Left" Margin="313,359,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboNumLit" HorizontalAlignment="Left" Margin="626,250,0,0" VerticalAlignment="Top" Width="139" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Numero_lit"/>
+        <Label Content="Numéro Lit" HorizontalAlignment="Left" Margin="627,216,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prenom" HorizontalAlignment="Left" Margin="235,171,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="400,171,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBoxMedPrenom" HorizontalAlignment="Left" Height="26" Margin="235,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="103" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxMedNom" HorizontalAlignment="Left" Height="28" Margin="400,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="113" IsEnabled="False"/>
 
     </Grid>
 </Window>
