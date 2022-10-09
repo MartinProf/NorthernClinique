@@ -11,7 +11,7 @@
         <CheckBox x:Name="checkbChirurgie" Content="Chirurgie" HorizontalAlignment="Left" Margin="313,332,0,0" VerticalAlignment="Top"/>
         <Label Content="Medecin" HorizontalAlignment="Left" Margin="91,177,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cboMedecin" HorizontalAlignment="Left" Margin="69,201,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDMedecin" SelectionChanged="cboMedecin_SelectionChanged"/>
-        <GroupBox Header="Services" Margin="79,271,521,42">
+        <GroupBox Header="Services" Margin="79,271,0,0" Height="121" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200">
             <Grid>
                 <CheckBox x:Name="cBoxTelevision" Content="Location televiseur" HorizontalAlignment="Left" Margin="36,22,0,0" VerticalAlignment="Top"/>
                 <CheckBox x:Name="cbTelephone" Content="Location telephone" HorizontalAlignment="Left" Margin="36,61,0,0" VerticalAlignment="Top"/>
@@ -35,7 +35,7 @@
         <Label Content="Prenom" HorizontalAlignment="Left" Margin="235,171,0,0" VerticalAlignment="Top"/>
         <Label Content="Nom" HorizontalAlignment="Left" Margin="400,171,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtBoxMedPrenom" HorizontalAlignment="Left" Height="26" Margin="235,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="103" IsEnabled="False"/>
-        <TextBox x:Name="txtBoxMedNom" HorizontalAlignment="Left" Height="28" Margin="400,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="113" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxMedNom" HorizontalAlignment="Left" Height="28" Margin="400,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="113" IsEnabled="False"/>
 
     </Grid>
 </Window>

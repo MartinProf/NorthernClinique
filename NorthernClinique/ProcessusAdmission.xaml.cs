@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -52,46 +53,52 @@ namespace NorthernClinique
             cboTypeLit.DataContext = queryTypeLit;
 
         }
-
+            
         private void btnValiderAdmission_Click(object sender, RoutedEventArgs e)
         {
             Admission admission = new Admission();
 
-            if (checkbChirurgie.IsChecked == true) {
+            if (nombrePatientAvecLit() < placeDisponible())
+            {
+                if (checkbChirurgie.IsChecked == true)
+                {
+                    try
+                    {
+                        admission.chirurgie_programmee = true;
+                        admission.date_chirurgie = datepChirurgie.SelectedDate;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Vous devez entrer une date de chirurgie!");
+                    }
+                }
+                admission.date_admission = DateTime.Now;
+                if (cBoxTelevision.IsChecked == true) admission.televiseur = true;
+                if (cbTelephone.IsChecked == true) admission.telephone = true;
+                admission.NSS = int.Parse(cbNSS.Text);
+
                 try
                 {
-                    admission.chirurgie_programmee = true;
-                    admission.date_chirurgie = datepChirurgie.SelectedDate;
+                    admission.Numero_lit = int.Parse(cboNumLit.Text);
+                    admission.IDMedecin = int.Parse(cboMedecin.Text);
+                    myBDD.Admission.Add(admission);
+                    miseAJourLit(int.Parse(cboNumLit.Text));
+                    myBDD.SaveChanges();
+                    MessageBox.Show("L'admission a été fait avec succès");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    MessageBox.Show("Vous devez entrer une date de chirurgie!");
+                    MessageBox.Show("Le département est plein", "Attention");
                 }
-            }
+
+                cBoxTelevision.IsChecked = false;
+                cbTelephone.IsChecked = false;
+                checkbChirurgie.IsChecked = false;
+            }else MessageBox.Show("L'hopital est plein", "Attention");
             
-            admission.date_admission = DateTime.Now;
-            if(cBoxTelevision.IsChecked == true) admission.televiseur = true;
-            if (cbTelephone.IsChecked == true) admission.telephone = true;
-            admission.NSS = int.Parse(cbNSS.Text);
-            admission.Numero_lit = int.Parse(cboNumLit.Text);
-            admission.IDMedecin = int.Parse(cboMedecin.Text);
-
-            myBDD.Admission.Add(admission);
-            try
-            {
-                myBDD.SaveChanges();
-                MessageBox.Show("L'admission a été fait avec succès");
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-
-            cBoxTelevision.IsChecked = false;
-            cbTelephone.IsChecked = false;
-            checkbChirurgie.IsChecked = false;
+            Window window = new sessionPrepose();
+            window.Show();
+            this.Close();
         }
 
         private void cboTypeChambre_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -129,5 +136,33 @@ namespace NorthernClinique
             txtBoxMedNom.Text = medecin.nom.ToString();
             txtBoxMedPrenom.Text = medecin.prenom.ToString();
         }
+
+        private int nombrePatientAvecLit() {
+            int nombrePatientAvecLit = (from a in myBDD.Admission
+                                        where a.date_du_congé == null
+                                        select a.NSS).Count();
+
+            return nombrePatientAvecLit;
+        }
+
+        private int placeDisponible() {
+            int placeDisponible = (from a in myBDD.Lit
+                                   select a.Numero_lit).Count();
+
+            return placeDisponible;
+        }
+
+        public static void miseAJourLit(int numeroDuLit) {
+            var BDD = new Northern_Lights_HospitalEntities1();
+            {
+                Lit lit = BDD.Lit.FirstOrDefault(t => t.Numero_lit == numeroDuLit);
+                if (lit != null) 
+                {
+                    lit.occupe = true;
+                    BDD.SaveChanges();
+                }
+            }
+        }
+            
     }
 }

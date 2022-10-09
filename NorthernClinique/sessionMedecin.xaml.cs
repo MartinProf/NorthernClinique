@@ -30,31 +30,54 @@ namespace NorthernClinique
         {
             BDD = new Northern_Lights_HospitalEntities1();
 
+            dgConge.DataContext = BDD.Admission.ToList();
+
+
+
+            /*
             dgConge.DataContext = generationDataGrid();
+            */
             dpConge.SelectedDate = DateTime.Now;
+            
         }
 
         private void btnAutoriser_Click(object sender, RoutedEventArgs e)
         {
             BDD = new Northern_Lights_HospitalEntities1();
+            Admission admission = dgConge.SelectedItem as Admission;
 
-            int leNSS = 1;
+            DateTime date = (DateTime)dpConge.SelectedDate;
 
-            var unPatient = BDD.Admission.Where(s => s.NSS == leNSS).First();
-            unPatient.date_du_congé = dpConge.SelectedDate;
-
-            //update Admission SET date_du_congé = 2022 - 01 - 01 WHERE IDAdmission = 1;
-
-
-            try
+            if (dpConge.SelectedDate >= DateTime.Today)
             {
-                BDD.SaveChanges();
-                MessageBox.Show("Congé accordé!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                try
+                {
+                    int numeroIDAdmission = admission.NSS;
+                    miseAjourAdmission(numeroIDAdmission, date);
+
+                    int numeroLit = admission.Numero_lit;
+                    miseAJourLit(numeroLit);
+                    
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
+                try
+                {
+                    BDD.SaveChanges();
+                    MessageBox.Show("Congé accordé!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }else MessageBox.Show("Transaction refusé, la date entrée est non valide!");
+
+
         }
 
         private List<dynamic> generationDataGrid() 
@@ -67,6 +90,32 @@ namespace NorthernClinique
                 select new { a.NSS, Patient = p.nom + p.prenom, ID = a.IDMedecin, Medecin = m.nom + m.prenom, Lit = a.Numero_lit, Status = l.occupe, Admission = a.date_admission, Conge = a.date_du_congé };
 
             return query.AsEnumerable().Cast<dynamic>().ToList<dynamic>();
+        }
+
+        public static void miseAJourLit(int numeroDuLit)
+        {
+            var BDD = new Northern_Lights_HospitalEntities1();
+            {
+                Lit lit = BDD.Lit.FirstOrDefault(t => t.Numero_lit == numeroDuLit);
+                if (lit != null)
+                {
+                    lit.occupe = false;
+                    BDD.SaveChanges();
+                }
+            }
+        }
+
+        public static void miseAjourAdmission(int idAdmission, DateTime date) 
+        {
+            var BDD = new Northern_Lights_HospitalEntities1();
+            {
+                Admission admission = BDD.Admission.FirstOrDefault(t => t.IDAdmission == idAdmission);
+                if (admission != null)
+                {
+                    admission.date_du_congé = date;
+                    BDD.SaveChanges();
+                }
+            }
         }
     }
 }
