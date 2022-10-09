@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="Medecin" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid HorizontalAlignment="Left" Width="800">
+        Title="Medecin" Height="450" Width="1147" Loaded="Window_Loaded">
+    <Grid HorizontalAlignment="Center" Width="1146">
         <Label Content="Congé patients" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="273" FontSize="36" FontWeight="Bold"/>
-        <DatePicker x:Name="dpConge" HorizontalAlignment="Left" Margin="65,333,0,0" VerticalAlignment="Top" Height="42" Width="291" FontSize="24"/>
-        <Label Content="Date du congé" HorizontalAlignment="Left" Margin="65,264,0,0" VerticalAlignment="Top" Width="187" FontSize="24" FontWeight="Bold"/>
-        <Button x:Name="btnAutoriser" Content="Autoriser" HorizontalAlignment="Left" Margin="500,325,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontWeight="Bold" Click="btnAutoriser_Click"/>
-        <DataGrid x:Name="dgConge" Margin="32,103,32,188" AutoGenerateColumns="True" ItemsSource="{Binding}"/>
+        <DatePicker x:Name="dpConge" HorizontalAlignment="Left" Margin="65,0,0,59" Width="291" FontSize="24" Height="42" VerticalAlignment="Bottom"/>
+        <Label Content="Date du congé" HorizontalAlignment="Left" Margin="65,0,0,128" Width="187" FontSize="24" FontWeight="Bold" Height="42" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnAutoriser" Content="Autoriser" HorizontalAlignment="Left" Margin="500,0,0,59" Width="200" FontSize="30" FontWeight="Bold" Click="btnAutoriser_Click" Height="50" VerticalAlignment="Bottom"/>
+        <DataGrid x:Name="dgConge" Margin="32,103,41,188" AutoGenerateColumns="True" ItemsSource="{Binding}"/>
     </Grid>
 </Window>
