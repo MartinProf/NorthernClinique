@@ -51,6 +51,7 @@ namespace NorthernClinique
             
             cboNumLit.DataContext = queryTypeLit;
             cboTypeLit.DataContext = queryTypeLit;
+            comboBSouhait.DataContext = myBDD.Type_Lit.ToList();
 
         }
             
@@ -111,8 +112,7 @@ namespace NorthernClinique
                  join c in myBDD.Type_Lit on b.IDType equals c.IDType
                  where (b.occupe == false)
                  where (a.IDDepartement == indice)
-                 select new
-                 {
+                 select new{
                      b.Numero_lit,
                      a.nom_departement,
                      c.description
@@ -128,6 +128,17 @@ namespace NorthernClinique
             Patient patient = cbNSS.SelectedItem as Patient;
             txtNom.Text = patient.nom.ToString();
             txtPrenom.Text = patient.prenom.ToString();
+            txtboxAssure.Text = patient.IDAssurance.ToString();
+            
+            string stringAgePatient = (DateTime.Now.Year - patient.date_naissance.Year).ToString();
+            txtboxAge.Text = stringAgePatient;
+            int intAgePatient = int.Parse(stringAgePatient);
+            
+            if (intAgePatient < 16) 
+            {
+                //cboTypeChambre.Text = 
+            }
+            
         }
 
         private void cboMedecin_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -163,6 +174,72 @@ namespace NorthernClinique
                 }
             }
         }
-            
+
+        private void cBoxTelevision_Checked(object sender, RoutedEventArgs e)
+        {
+            float montant = float.Parse(txtboxPrix.Text);
+            float televiseur = 42.5f;
+            txtboxPrix.Text = (montant+ televiseur).ToString();
+        }
+
+        private void cBoxTelevision_Unchecked(object sender, RoutedEventArgs e)
+        {
+            float montant = float.Parse(txtboxPrix.Text);
+            float televiseur = 42.5f;
+            txtboxPrix.Text = (montant- televiseur).ToString();
+        }
+
+        private void cbTelephone_Checked(object sender, RoutedEventArgs e)
+        {
+            float montant = float.Parse(txtboxPrix.Text);
+            float telephone = 7.5f;
+            txtboxPrix.Text = (montant + telephone).ToString();
+        }
+
+        private void cbTelephone_Unchecked(object sender, RoutedEventArgs e)
+        {
+            float montant = float.Parse(txtboxPrix.Text);
+            float telephone = 7.5f;
+            txtboxPrix.Text = (montant - telephone).ToString();
+        }
+
+         private void btnCalculer_Click(object sender, RoutedEventArgs e)
+        {
+            int indexSouhaite = comboBSouhait.SelectedIndex;
+            string litSelectionne = cboTypeLit.Text;
+            int indexSelectionne;
+
+            if (litSelectionne == "Public                   ") indexSelectionne = 0;
+            else if (litSelectionne == "Semi-Privée              ") indexSelectionne = 1;
+            else indexSelectionne = 2;
+
+            bool assurePrivee = false;
+            int assurance = int.Parse(txtboxAssure.Text);
+            if (assurance > 1) assurePrivee = true;
+
+            if (!assurePrivee && (indexSouhaite > 0))
+            {
+                if (indexSelectionne == 1)
+                {
+                    float montant = float.Parse(txtboxPrix.Text);
+                    float semiPrivee = 267f;
+                    txtboxPrix.Text = (montant + semiPrivee).ToString();
+                }
+                else if (indexSelectionne == 2)
+                {
+                    float montant = float.Parse(txtboxPrix.Text);
+                    float privee = 571f;
+                    txtboxPrix.Text = (montant + privee).ToString();
+                }
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            txtboxPrix.Text = "0";
+            checkbChirurgie.IsChecked = false;
+            cbTelephone.IsChecked = false;
+            cBoxTelevision.IsChecked = false;
+        }
     }
 }
