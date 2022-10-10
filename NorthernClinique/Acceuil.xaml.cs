@@ -57,19 +57,19 @@ namespace NorthernClinique
                     {
                         sessionAdmin sessionAdmin = new sessionAdmin();
                         sessionAdmin.Show();
-                        this.Close();
+                        this.Hide();
                     }
                     else if (Application.Current.Properties["posteOccupe"].ToString() == "Medecin")
                     {
                         sessionMedecin sessionMedecin = new sessionMedecin();
                         sessionMedecin.Show();
-                        this.Close();
+                        this.Hide();
                     }
                     else
                     {
                         sessionPrepose sessionPrepose = new sessionPrepose();   
                         sessionPrepose.Show();
-                        this.Close();
+                        this.Hide();
                     }
 
                 }
