@@ -8,7 +8,7 @@
         Title="ProcessusAdmission" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Button x:Name="btnValiderAdmission" Content="Valider Admission" HorizontalAlignment="Left" Margin="648,383,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.178,0.517" Width="116" Height="32" Click="btnValiderAdmission_Click"/>
-        <CheckBox x:Name="checkbChirurgie" Content="Chirurgie" HorizontalAlignment="Left" Margin="313,332,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkbChirurgie" Content="Chirurgie" HorizontalAlignment="Left" Margin="313,332,0,0" VerticalAlignment="Top" Checked="checkbChirurgie_Checked"/>
         <Label Content="Medecin" HorizontalAlignment="Left" Margin="91,177,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cboMedecin" HorizontalAlignment="Left" Margin="69,201,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDMedecin" SelectionChanged="cboMedecin_SelectionChanged"/>
         <GroupBox Header="Services" Margin="79,271,0,0" Height="121" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200">

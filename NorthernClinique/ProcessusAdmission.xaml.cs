@@ -133,11 +133,12 @@ namespace NorthernClinique
             string stringAgePatient = (DateTime.Now.Year - patient.date_naissance.Year).ToString();
             txtboxAge.Text = stringAgePatient;
             int intAgePatient = int.Parse(stringAgePatient);
-            
-            if (intAgePatient < 16) 
+
+            if (intAgePatient < 16 && checkbChirurgie.IsChecked == false)
             {
-                //cboTypeChambre.Text = 
+                cboTypeChambre.SelectedIndex = 2;
             }
+            else cboTypeChambre.SelectedIndex = 0;
             
         }
 
@@ -240,6 +241,11 @@ namespace NorthernClinique
             checkbChirurgie.IsChecked = false;
             cbTelephone.IsChecked = false;
             cBoxTelevision.IsChecked = false;
+        }
+
+        private void checkbChirurgie_Checked(object sender, RoutedEventArgs e)
+        {
+            cboTypeChambre.SelectedIndex = 0;
         }
     }
 }
