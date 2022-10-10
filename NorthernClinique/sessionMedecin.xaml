@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="Medecin" Height="450" Width="1147" Loaded="Window_Loaded">
+        Title="Medecin" Height="450" Width="1147" Loaded="Window_Loaded" Closed="Window_Closed">
     <Grid HorizontalAlignment="Center" Width="1146">
         <Label Content="Congé patients" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="273" FontSize="36" FontWeight="Bold"/>
         <DatePicker x:Name="dpConge" HorizontalAlignment="Left" Margin="65,0,0,59" Width="291" FontSize="24" Height="42" VerticalAlignment="Bottom"/>

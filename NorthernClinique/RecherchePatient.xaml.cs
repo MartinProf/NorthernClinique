@@ -86,5 +86,6 @@ namespace NorthernClinique
             txtTelephone.Text = string.Empty;
 
         }
+
     }
 }

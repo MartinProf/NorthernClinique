@@ -10,7 +10,12 @@
 
     <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
         <Label Content="Tableau consultation" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="370" FontSize="36" FontWeight="Bold"/>
-        <DataGrid x:Name="dataGridConsul" HorizontalAlignment="Left" Height="247" Margin="91,134,0,0" VerticalAlignment="Top" Width="647" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" RowBackground="Aqua"/>
+        <Label Content="Taux d'occupation de l'hopital:" HorizontalAlignment="Left" Height="47" Margin="89,128,0,0" VerticalAlignment="Top" Width="369" FontSize="24" FontWeight="Bold"/>
+        <Label x:Name="labelTauxOcc" Content="" HorizontalAlignment="Left" Height="68" Margin="463,113,0,0" VerticalAlignment="Top" Width="122" FontSize="36" Foreground="#FF35E860"/>
+        <Label Content="Nombre de medecin en poste:" HorizontalAlignment="Left" Height="47" Margin="89,224,0,0" VerticalAlignment="Top" Width="369" FontSize="24" FontWeight="Bold"/>
+        <Label x:Name="labelNombreMedecin" Content="" HorizontalAlignment="Left" Height="66" Margin="463,211,0,0" VerticalAlignment="Top" Width="122" FontSize="36" Foreground="#FF35E860"/>
+        <Label Content="Nombre de patients actif:" HorizontalAlignment="Left" Height="47" Margin="89,320,0,0" VerticalAlignment="Top" Width="369" FontSize="24" FontWeight="Bold"/>
+        <Label x:Name="labelPatientActif" Content="" HorizontalAlignment="Left" Height="66" Margin="463,307,0,0" VerticalAlignment="Top" Width="122" FontSize="36" Foreground="#FF35E860"/>
 
     </Grid>
 </Page>
