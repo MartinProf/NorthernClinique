@@ -30,10 +30,27 @@ namespace NorthernClinique
         {
             myBDD = new Northern_Lights_HospitalEntities1();
 
-            var query =
-                from m in myBDD.Medecin
-                select new { Médecin_traitant = m.prenom + " " + m.nom };
-            dataGridConsul.DataContext = query.ToList();
+            labelTauxOcc.Content = (int)TauxOccupation() + "%";
+            labelNombreMedecin.Content = NombreMedecin();
+            labelPatientActif.Content = NombrePatient();
+        }
+
+        private float TauxOccupation() 
+        {
+            float queryOccupe = myBDD.Lit.Where(l => l.occupe==true).Count();
+            float queryTotal = myBDD.Lit.Count();
+
+            return queryOccupe / queryTotal * 100;
+                
+        }
+        private int NombreMedecin() 
+        {
+            return myBDD.Medecin.Count();
+        }
+
+        private int NombrePatient()
+        {
+            return myBDD.Patient.Count();
         }
     }
 }

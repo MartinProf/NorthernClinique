@@ -87,7 +87,7 @@ namespace NorthernClinique
                     myBDD.SaveChanges();
                     MessageBox.Show("L'admission a été fait avec succès");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Le département est plein", "Attention");
                 }

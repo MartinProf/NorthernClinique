@@ -37,5 +37,6 @@ namespace NorthernClinique
             recherchePatient.Show();
             this.Close();
         }
+
     }
 }
