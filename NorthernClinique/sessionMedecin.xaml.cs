@@ -29,55 +29,31 @@ namespace NorthernClinique
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             BDD = new Northern_Lights_HospitalEntities1();
-
-            dgConge.DataContext = BDD.Admission.ToList();
-
-
-
-            /*
-            dgConge.DataContext = generationDataGrid();
-            */
-            dpConge.SelectedDate = DateTime.Now;
-            
+            dgConge.DataContext = BDD.Admission.Where(a => a.date_du_congé == null).ToList();
+            comboboxIdadmission.DataContext = BDD.Admission.Where(a => a.date_du_congé == null).ToList();
+            dpConge.SelectedDate = DateTime.Today;
         }
 
         private void btnAutoriser_Click(object sender, RoutedEventArgs e)
         {
             BDD = new Northern_Lights_HospitalEntities1();
-            Admission admission = dgConge.SelectedItem as Admission;
-
-            DateTime date = (DateTime)dpConge.SelectedDate;
+            Admission admission = comboboxIdadmission.SelectedItem as Admission;
 
             if (dpConge.SelectedDate >= DateTime.Today)
             {
-                try
-                {
-                    int numeroIDAdmission = admission.NSS;
-                    miseAjourAdmission(numeroIDAdmission, date);
-
-                    int numeroLit = admission.Numero_lit;
-                    miseAJourLit(numeroLit);
-                    
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-
-                try
-                {
+                try {
+                    miseAjourAdmission(admission.IDAdmission, (DateTime)dpConge.SelectedDate);
+                    miseAJourLit(admission.Numero_lit);
                     BDD.SaveChanges();
                     MessageBox.Show("Congé accordé!");
                 }
-                catch (Exception ex)
-                {
+                catch (Exception ex) {
                     MessageBox.Show(ex.Message);
                 }
 
             }else MessageBox.Show("Transaction refusé, la date entrée est non valide!");
 
-
+            dgConge.DataContext = BDD.Admission.Where(a => a.date_du_congé == null).ToList();
         }
 
         private List<dynamic> generationDataGrid() 
@@ -117,5 +93,6 @@ namespace NorthernClinique
                 }
             }
         }
+
     }
 }
