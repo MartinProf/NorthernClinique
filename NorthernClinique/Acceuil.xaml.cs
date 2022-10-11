@@ -85,6 +85,11 @@ namespace NorthernClinique
             Utilisateur utilisateur = utilisateurs.SingleOrDefault(s => s.nomUtilisateur == nomUtilisateur && s.motPasse == motPasse && s.posteOccupe == posteOccupe);
             return utilisateur;
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 
 }

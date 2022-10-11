@@ -28,15 +28,21 @@ namespace NorthernClinique
         {
             ProcessusAdmission processusAdmission = new ProcessusAdmission();
             processusAdmission.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnPatient_Click(object sender, RoutedEventArgs e)
         {
             RecherchePatient recherchePatient = new RecherchePatient();
             recherchePatient.Show();
-            this.Close();
+            this.Hide();
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Acceuil acceuil = new Acceuil();
+            acceuil.Show();
+            this.Hide();
+        }
     }
 }

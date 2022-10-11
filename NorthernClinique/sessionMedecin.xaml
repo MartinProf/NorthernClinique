@@ -7,12 +7,46 @@
         mc:Ignorable="d"
         Title="Medecin" Height="450" Width="1147" Loaded="Window_Loaded" Closed="Window_Closed">
     <Grid HorizontalAlignment="Center" Width="1146">
-        <Label Content="Congé patients" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="273" FontSize="36" FontWeight="Bold"/>
-        <DatePicker x:Name="dpConge" HorizontalAlignment="Left" Margin="65,0,0,59" Width="291" FontSize="24" Height="42" VerticalAlignment="Bottom"/>
-        <Label Content="Date du congé" HorizontalAlignment="Left" Margin="65,0,0,128" Width="187" FontSize="24" FontWeight="Bold" Height="42" VerticalAlignment="Bottom"/>
-        <Button x:Name="btnAutoriser" Content="Autoriser" HorizontalAlignment="Left" Margin="905,0,0,59" Width="200" FontSize="30" FontWeight="Bold" Click="btnAutoriser_Click" Height="42" VerticalAlignment="Bottom"/>
-        <DataGrid x:Name="dgConge" Margin="32,103,41,188" AutoGenerateColumns="True" ItemsSource="{Binding}"/>
-        <ComboBox x:Name="comboboxIdadmission" HorizontalAlignment="Left" Margin="509,0,0,59" Width="242" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDAdmission" Height="42" VerticalAlignment="Bottom" FontSize="24"/>
-        <Label Content="Id admission" HorizontalAlignment="Left" Margin="509,0,0,128" Width="242" FontSize="24" FontWeight="Bold" Height="42" VerticalAlignment="Bottom"/>
+        <Label Content="Congé patients" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="273" FontSize="46" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed"/>
+        <DatePicker x:Name="dpConge" HorizontalAlignment="Left" Margin="65,0,0,59" Width="291" FontSize="30" Height="42" VerticalAlignment="Bottom" FontFamily="Bahnschrift SemiBold Condensed" Background="#FF0A0909">
+            <DatePicker.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF07900"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </DatePicker.Foreground>
+        </DatePicker>
+        <Label Content="Date du congé" HorizontalAlignment="Left" Margin="65,0,0,128" Width="187" FontSize="30" FontWeight="Bold" Height="42" VerticalAlignment="Bottom" FontFamily="Bahnschrift SemiBold Condensed"/>
+        <Button x:Name="btnAutoriser" Content="Autoriser" HorizontalAlignment="Left" Margin="905,0,0,59" Width="200" FontSize="26" FontWeight="Bold" Click="btnAutoriser_Click" Height="42" VerticalAlignment="Bottom" FontFamily="Bahnschrift SemiBold Condensed" Background="Black">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF07900"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <DataGrid x:Name="dgConge" Margin="32,103,41,188" AutoGenerateColumns="True" ItemsSource="{Binding}" FontFamily="Bahnschrift SemiBold Condensed" FontSize="30" Background="Black">
+            <DataGrid.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF07900"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Foreground>
+        </DataGrid>
+        <ComboBox x:Name="comboboxIdadmission" HorizontalAlignment="Left" Margin="509,0,0,59" Width="242" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDAdmission" Height="42" VerticalAlignment="Bottom" FontSize="30" FontFamily="Bahnschrift SemiBold Condensed">
+            <ComboBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF07900"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Foreground>
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Label Content="Id admission" HorizontalAlignment="Left" Margin="509,0,0,128" Width="242" FontSize="30" FontWeight="Bold" Height="42" VerticalAlignment="Bottom" FontFamily="Bahnschrift SemiBold Condensed"/>
     </Grid>
 </Window>
