@@ -247,5 +247,12 @@ namespace NorthernClinique
         {
             cboTypeChambre.SelectedIndex = 0;
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Acceuil acceuil = new Acceuil();
+            acceuil.Show();
+            this.Hide();
+        }
     }
 }
