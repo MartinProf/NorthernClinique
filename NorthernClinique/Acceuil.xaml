@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="Acceuil" Height="202" Width="550" WindowStartupLocation="CenterScreen">
+        Title="Acceuil" Height="202" Width="550" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
     <Grid>
         <Grid HorizontalAlignment="Center" Height="108" Margin="0,26,0,0" VerticalAlignment="Top" Width="485">
             <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Bahnschrift SemiBold Condensed" FontSize="22" Background="#FFB5D2F1" BorderBrush="Black" BorderThickness="2,2,2,2"/>

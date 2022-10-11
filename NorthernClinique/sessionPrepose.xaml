@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="sessionPrepose" Height="450" Width="800">
+        Title="sessionPrepose" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
         <Button x:Name="btnAdmission" Content="Processus d'admission" HorizontalAlignment="Left" Margin="0,142,0,0" VerticalAlignment="Top" Height="150" Width="400" FontSize="36" Click="btnAdmission_Click"/>
         <Button x:Name="btnPatient" Content="Nouveau patient" HorizontalAlignment="Left" Margin="400,142,0,0" VerticalAlignment="Top" Height="150" Width="400" FontSize="36" Click="btnPatient_Click"/>
