@@ -32,5 +32,6 @@ namespace NorthernClinique
         public virtual DbSet<Medecin> Medecin { get; set; }
         public virtual DbSet<Patient> Patient { get; set; }
         public virtual DbSet<Type_Lit> Type_Lit { get; set; }
+        public virtual DbSet<AdminLitMedPatient> AdminLitMedPatient { get; set; }
     }
 }

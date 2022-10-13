@@ -5,26 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="Acceuil" Height="202" Width="550" WindowStartupLocation="CenterScreen" Closed="Window_Closed" Icon="/Images/pumpkin.png">
+        Title="Acceuil" Height="222" Width="550" WindowStartupLocation="CenterScreen" Closed="Window_Closed" Icon="/Images/pumpkin.png" Background="#FF7D37DC">
     <Grid>
-        <Grid HorizontalAlignment="Center" Height="108" Margin="0,26,0,0" VerticalAlignment="Top" Width="485">
+        <Grid HorizontalAlignment="Center" Height="125" Margin="0,26,0,0" VerticalAlignment="Top" Width="486">
             <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Bahnschrift SemiBold Condensed" FontSize="22" Background="#FFF07900" BorderBrush="Black" BorderThickness="2,2,2,2"/>
             <PasswordBox x:Name="pwLogin" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Bahnschrift SemiBold Condensed" FontSize="22" Background="#FFF07900" BorderBrush="Black" BorderThickness="2,2,2,2" Margin="0,30,0,0"/>
-            <ComboBox x:Name="cboLogin" HorizontalAlignment="Left" Margin="335,30,0,0" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Bahnschrift SemiBold Condensed" FontSize="22" BorderBrush="Black" BorderThickness="2,2,2,2" Background="#FFF07900">
+            <ComboBox x:Name="cboLogin" HorizontalAlignment="Left" Margin="335,30,0,0" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Juice ITC" FontSize="22" BorderBrush="Black" BorderThickness="2,2,2,2" Background="#FF017900">
                 <ComboBox.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFF07900"/>
-                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FF7D37DC"/>
+                        <GradientStop Color="Black" Offset="1"/>
                     </LinearGradientBrush>
                 </ComboBox.Foreground>
                 <ComboBoxItem Name="admin" Content="Administrateur"></ComboBoxItem>
                 <ComboBoxItem Name="med" Content="Medecin"></ComboBoxItem>
                 <ComboBoxItem Name="prep" Content="Prepose"></ComboBoxItem>
             </ComboBox>
-            <Label Content="Nom d'utilisateur" HorizontalAlignment="Left" Margin="4,0,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold Condensed" FontSize="16" FontWeight="Bold"/>
-            <Label Content="Mot de passe" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold Condensed" FontSize="16" FontWeight="Bold"/>
-            <Label Content="Poste occupé" HorizontalAlignment="Left" Margin="358,0,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift SemiBold Condensed" FontSize="16" FontWeight="Bold"/>
-            <Button x:Name="btnLogin" Content="VALIDER" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Bahnschrift SemiBold Condensed" FontSize="18" BorderThickness="2,2,2,2" Click="btnLogin_Click" Background="Black" BorderBrush="Black">
+            <Label Content="Nom d'utilisateur" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="24" FontWeight="Bold" Margin="0,-8,0,0"/>
+            <Label Content="Mot de passe" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="24" FontWeight="Bold" Margin="168,-8,0,0"/>
+            <Label Content="Poste occupé" HorizontalAlignment="Left" Margin="335,-8,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="24" FontWeight="Bold"/>
+            <Button x:Name="btnLogin" Content="VALIDER" HorizontalAlignment="Center" Margin="0,95,0,0" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Juice ITC" FontSize="24" BorderThickness="2,2,2,2" Click="btnLogin_Click" Background="Black" BorderBrush="Black" FontWeight="Bold">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFF07900" Offset="0.004"/>
@@ -37,6 +37,7 @@
             </Button>
 
         </Grid>
+        <Image HorizontalAlignment="Left" Height="85" Margin="411,93,0,0" VerticalAlignment="Top" Width="111" Source="/Images/nurse pumpkin.png"/>
 
     </Grid>
 </Window>

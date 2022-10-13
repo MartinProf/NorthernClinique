@@ -9,13 +9,37 @@
       Title="tableauConsultation" Loaded="Page_Loaded">
 
     <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
-        <Label Content="Tableau consultation" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="370" FontSize="36" FontWeight="Bold"/>
-        <Label Content="Taux d'occupation de l'hopital:" HorizontalAlignment="Left" Height="47" Margin="89,128,0,0" VerticalAlignment="Top" Width="369" FontSize="24" FontWeight="Bold"/>
-        <Label x:Name="labelTauxOcc" Content="" HorizontalAlignment="Left" Height="68" Margin="463,113,0,0" VerticalAlignment="Top" Width="122" FontSize="36" Foreground="#FF35E860"/>
-        <Label Content="Nombre de medecin en poste:" HorizontalAlignment="Left" Height="47" Margin="89,224,0,0" VerticalAlignment="Top" Width="369" FontSize="24" FontWeight="Bold"/>
-        <Label x:Name="labelNombreMedecin" Content="" HorizontalAlignment="Left" Height="66" Margin="463,211,0,0" VerticalAlignment="Top" Width="122" FontSize="36" Foreground="#FF35E860"/>
-        <Label Content="Nombre de patients actif:" HorizontalAlignment="Left" Height="47" Margin="89,320,0,0" VerticalAlignment="Top" Width="369" FontSize="24" FontWeight="Bold"/>
-        <Label x:Name="labelPatientActif" Content="" HorizontalAlignment="Left" Height="66" Margin="463,307,0,0" VerticalAlignment="Top" Width="122" FontSize="36" Foreground="#FF35E860"/>
+        <Label Content="Tableau consultation" HorizontalAlignment="Left" Height="69" Margin="262,28,0,0" VerticalAlignment="Top" Width="370" FontSize="48" FontFamily="Juice ITC" FontWeight="Bold"/>
+        <Label Content="Taux d'occupation de l'hopital:" HorizontalAlignment="Left" Height="47" Margin="136,128,0,0" VerticalAlignment="Top" Width="369" FontSize="36" FontWeight="Bold" FontFamily="Juice ITC"/>
+        <Label x:Name="labelTauxOcc" Content="" HorizontalAlignment="Left" Height="93" Margin="510,106,0,0" VerticalAlignment="Top" Width="134" FontSize="72" FontFamily="Bodoni MT Black">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8C37DC"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+
+        </Label>
+        <Label Content="Nombre de medecin en poste:" HorizontalAlignment="Left" Height="47" Margin="136,224,0,0" VerticalAlignment="Top" Width="369" FontSize="36" FontWeight="Bold" FontFamily="Juice ITC"/>
+        <Label x:Name="labelNombreMedecin" Content="" HorizontalAlignment="Left" Height="91" Margin="510,202,0,0" VerticalAlignment="Top" Width="134" FontSize="72" FontFamily="Bodoni MT Black">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7837DC"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+
+        </Label>
+        <Label Content="Nombre de patients actif:" HorizontalAlignment="Left" Height="47" Margin="136,320,0,0" VerticalAlignment="Top" Width="369" FontSize="36" FontWeight="Bold" FontFamily="Juice ITC"/>
+        <Label x:Name="labelPatientActif" Content="" HorizontalAlignment="Left" Height="90" Margin="506,296,0,0" VerticalAlignment="Top" Width="138" FontSize="72" FontFamily="Bodoni MT Black">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8C37DC"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+
+        </Label>
 
     </Grid>
 </Page>

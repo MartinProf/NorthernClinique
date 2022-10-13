@@ -5,19 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="Menu Personnel" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Menu Personnel" Height="808" Width="1331" Loaded="Window_Loaded" WindowStyle="None">
     <Grid>
-        <Menu HorizontalAlignment = "Center" VerticalAlignment = "Top" Width = "800">
-            <MenuItem Header = "Option">
-                <MenuItem x:Name="menuIAjouter" Header = "Ajouter" HorizontalAlignment = "Left" Width = "140" Click = "MenuAjouter_Click" />
-                <MenuItem x:Name="menuIModifier" Header = "Modifier" HorizontalAlignment = "Left" Width = "140" Click = "MenuModifier_Click" />
-                <MenuItem x:Name="menuISupprimer" Header = "Supprimer" HorizontalAlignment = "Left" Width = "140" Click = "MenuSupprimer_Click" />
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/PumpkinAndCandle.jpg"/>
+        </Grid.Background>
+        <Menu HorizontalAlignment = "Center" VerticalAlignment = "Top" Width = "1331" Height="46">
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF8C5A00" Offset="0.496"/>
+                </LinearGradientBrush>
+            </Menu.Background>
+            <MenuItem Header = "Option" Width="150" Height="43" FontFamily="Juice ITC" FontSize="22" FontWeight="Bold">
+                <MenuItem x:Name="menuIAjouter" Header = "Ajouter"  Width = "180" Click = "MenuAjouter_Click" />
+                <MenuItem x:Name="menuIModifier" Header = "Modifier" Width = "180" Click = "MenuModifier_Click" />
+                <MenuItem x:Name="menuISupprimer" Header = "Supprimer"  Width = "180" Click = "MenuSupprimer_Click" />
             </MenuItem>
-            <MenuItem Header = "Quitter">
+            <MenuItem Header = "Quitter" Width="150" FontFamily="Juice ITC" FontSize="22" FontWeight="Bold" Height="45">
                 <MenuItem Header = "Quitter" HorizontalAlignment = "Left" Width = "140" Click = "MenuQuitter_Click" />
             </MenuItem>
         </Menu>
-        <Frame x:Name="framePerso" Content="" HorizontalAlignment="Center" Height="416" Margin="0,18,0,0" VerticalAlignment="Top" Width="800" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="framePerso" Content="" HorizontalAlignment="Center" Height="694" Margin="0,71,0,0" VerticalAlignment="Top" Width="1215" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>

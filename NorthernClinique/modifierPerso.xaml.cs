@@ -47,20 +47,28 @@ namespace NorthernClinique
         {
             Medecin medecin = comboBIDMedecin.SelectedItem as Medecin;
 
-            medecin.IDMedecin = int.Parse(comboBIDMedecin.Text);
-            medecin.nom = textBoxNom.Text;
-            medecin.prenom = textBoxPrenom.Text;
-
-            try
+            if(string.IsNullOrEmpty(textBoxNom.Text) || string.IsNullOrEmpty(textBoxNom.Text)) 
             {
-                myBDD.SaveChanges();
-                MessageBox.Show("Modification du medecin fait avec succès");
-            }
-            catch (Exception ex)
+                MessageBox.Show("Veuillez remplir tous les champs!");
+            } else
             {
+                medecin.IDMedecin = int.Parse(comboBIDMedecin.Text);
+                medecin.nom = textBoxNom.Text;
+                medecin.prenom = textBoxPrenom.Text;
 
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    myBDD.SaveChanges();
+                    MessageBox.Show("Modification du medecin fait avec succès");
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
+
+            
         }
 
     }

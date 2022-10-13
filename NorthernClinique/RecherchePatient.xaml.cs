@@ -31,6 +31,7 @@ namespace NorthernClinique
         {
             myBDD = new Northern_Lights_HospitalEntities1();
             cboAssurance.DataContext = myBDD.Assurance.ToList();
+            DPdateNaissance.SelectedDate = DateTime.Today;
         }
 
         private void btnAdmission_Click(object sender, RoutedEventArgs e)
@@ -52,28 +53,35 @@ namespace NorthernClinique
 
         private void btnAjouterPatient_Click(object sender, RoutedEventArgs e)
         {
-            Patient patient = new Patient();
-            patient.date_naissance = DPdateNaissance.SelectedDate.Value;
-            patient.nom = txtNom.Text;
-            patient.prenom = txtPrenom.Text;
-            patient.adresse = txtAdresse.Text;
-            patient.ville = txtVille.Text;
-            patient.province = txtProvince.Text;
-            patient.code_postal = txtCodePostal.Text;
-            patient.telephone = txtTelephone.Text;
-            patient.IDAssurance = ((Assurance)cboAssurance.SelectedItem).IDAssurance;
 
-            myBDD.Patient.Add(patient);
-
-            try
+            if(string.IsNullOrEmpty(txtNom.Text) || string.IsNullOrEmpty(txtPrenom.Text) || string.IsNullOrEmpty(txtVille.Text) || string.IsNullOrEmpty(txtProvince.Text))
             {
-                myBDD.SaveChanges();
-                MessageBox.Show("Nouveau patient ajouter avec succès");
-            }
-            catch (Exception ex)
+                MessageBox.Show("Veuillez remplir tous les champs!");
+            } else
             {
+                Patient patient = new Patient();
+                patient.date_naissance = DPdateNaissance.SelectedDate.Value;
+                patient.nom = txtNom.Text;
+                patient.prenom = txtPrenom.Text;
+                patient.adresse = txtAdresse.Text;
+                patient.ville = txtVille.Text;
+                patient.province = txtProvince.Text;
+                patient.code_postal = txtCodePostal.Text;
+                patient.telephone = txtTelephone.Text;
+                patient.IDAssurance = ((Assurance)cboAssurance.SelectedItem).IDAssurance;
 
-                MessageBox.Show(ex.Message);
+                myBDD.Patient.Add(patient);
+
+                try
+                {
+                    myBDD.SaveChanges();
+                    MessageBox.Show("Nouveau patient ajouter avec succès");
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
 
             DPdateNaissance.DataContext = DateTime.Today;
@@ -87,7 +95,7 @@ namespace NorthernClinique
 
         }
 
-        private void Window_Closed(object sender, EventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             Acceuil acceuil = new Acceuil();
             acceuil.Show();

@@ -50,6 +50,8 @@ namespace NorthernClinique
             Medecin medecin = (from m in myBDD.Medecin where m.IDMedecin == medecinARetirer select m).SingleOrDefault();
             myBDD.Medecin.Remove(medecin);
 
+
+
             if (MessageBox.Show("Êtes-vous sûr de vouloir procéder à la supression?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 try
