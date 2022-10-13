@@ -97,7 +97,7 @@ namespace NorthernClinique
                 checkbChirurgie.IsChecked = false;
             }else MessageBox.Show("L'hopital est plein", "Attention");
             
-            Window window = new sessionPrepose();
+            Window window = new ProcessusAdmission();
             window.Show();
             this.Close();
         }
@@ -248,7 +248,8 @@ namespace NorthernClinique
             cboTypeChambre.SelectedIndex = 0;
         }
 
-        private void Window_Closed(object sender, EventArgs e)
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Acceuil acceuil = new Acceuil();
             acceuil.Show();

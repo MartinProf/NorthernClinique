@@ -73,6 +73,27 @@
           <Property Name="IDType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="description" Type="nchar" MaxLength="25" Nullable="false" />
         </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Northern_Lights_Hospital.dbo.AdminLitMedPatient' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="AdminLitMedPatient">
+          <Key>
+            <PropertyRef Name="NoAdmission" />
+            <PropertyRef Name="NoLit" />
+            <PropertyRef Name="Admission" />
+            <PropertyRef Name="Status du lit" />
+            <PropertyRef Name="Médecin" />
+            <PropertyRef Name="Prénom Patient" />
+            <PropertyRef Name="Nom Patient" />
+          </Key>
+          <Property Name="NoAdmission" Type="int" Nullable="false" />
+          <Property Name="NoLit" Type="int" Nullable="false" />
+          <Property Name="Admission" Type="date" Nullable="false" />
+          <Property Name="Congé" Type="date" />
+          <Property Name="Status du lit" Type="bit" Nullable="false" />
+          <Property Name="Médecin" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prénom Patient" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nom Patient" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Admission_Lit">
           <End Role="Lit" Type="Self.Lit" Multiplicity="1" />
           <End Role="Admission" Type="Self.Admission" Multiplicity="*" />
@@ -153,6 +174,18 @@
           <EntitySet Name="Medecin" EntityType="Self.Medecin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Type_Lit" EntityType="Self.Type_Lit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdminLitMedPatient" EntityType="Self.AdminLitMedPatient" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AdminLitMedPatient].[NoAdmission] AS [NoAdmission], 
+    [AdminLitMedPatient].[NoLit] AS [NoLit], 
+    [AdminLitMedPatient].[Admission] AS [Admission], 
+    [AdminLitMedPatient].[Congé] AS [Congé], 
+    [AdminLitMedPatient].[Status du lit] AS [Status du lit], 
+    [AdminLitMedPatient].[Médecin] AS [Médecin], 
+    [AdminLitMedPatient].[Prénom Patient] AS [Prénom Patient], 
+    [AdminLitMedPatient].[Nom Patient] AS [Nom Patient]
+    FROM [dbo].[AdminLitMedPatient] AS [AdminLitMedPatient]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Admission_Lit" Association="Self.FK_Admission_Lit">
             <End Role="Lit" EntitySet="Lit" />
             <End Role="Admission" EntitySet="Admission" />
@@ -366,7 +399,27 @@
             <End Role="Type_Lit" EntitySet="Type_Lit" />
             <End Role="Lit" EntitySet="Lit" />
           </AssociationSet>
+          <EntitySet Name="AdminLitMedPatient" EntityType="NorthernClinique.AdminLitMedPatient" />
         </EntityContainer>
+        <EntityType Name="AdminLitMedPatient">
+          <Key>
+            <PropertyRef Name="NoAdmission" />
+            <PropertyRef Name="NoLit" />
+            <PropertyRef Name="Admission" />
+            <PropertyRef Name="Status_du_lit" />
+            <PropertyRef Name="Médecin" />
+            <PropertyRef Name="Prénom_Patient" />
+            <PropertyRef Name="Nom_Patient" />
+          </Key>
+          <Property Name="NoAdmission" Type="Int32" Nullable="false" />
+          <Property Name="NoLit" Type="Int32" Nullable="false" />
+          <Property Name="Admission" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Congé" Type="DateTime" Precision="0" />
+          <Property Name="Status_du_lit" Type="Boolean" Nullable="false" />
+          <Property Name="Médecin" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Prénom_Patient" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Nom_Patient" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -445,6 +498,20 @@
               <MappingFragment StoreEntitySet="Type_Lit">
                 <ScalarProperty Name="IDType" ColumnName="IDType" />
                 <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminLitMedPatient">
+            <EntityTypeMapping TypeName="NorthernClinique.AdminLitMedPatient">
+              <MappingFragment StoreEntitySet="AdminLitMedPatient">
+                <ScalarProperty Name="Nom_Patient" ColumnName="Nom Patient" />
+                <ScalarProperty Name="Prénom_Patient" ColumnName="Prénom Patient" />
+                <ScalarProperty Name="Médecin" ColumnName="Médecin" />
+                <ScalarProperty Name="Status_du_lit" ColumnName="Status du lit" />
+                <ScalarProperty Name="Congé" ColumnName="Congé" />
+                <ScalarProperty Name="Admission" ColumnName="Admission" />
+                <ScalarProperty Name="NoLit" ColumnName="NoLit" />
+                <ScalarProperty Name="NoAdmission" ColumnName="NoAdmission" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

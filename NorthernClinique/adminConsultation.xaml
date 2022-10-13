@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="adminConsultation" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
-        <Menu HorizontalAlignment = "Center" VerticalAlignment = "Top" Width = "800">
-             <MenuItem Header = "Quitter">
+        Title="adminConsultation" Height="535" Width="880" Loaded="Window_Loaded">
+    <Grid Background="#FF8C37DC">
+        <Menu HorizontalAlignment = "Center" VerticalAlignment = "Top" Width = "880">
+            <MenuItem Header = "Quitter">
                 <MenuItem Header = "Quitter" HorizontalAlignment = "Left" Width = "140" Click = "MenuQuitter_Click" />
             </MenuItem>
         </Menu>
-        <Frame x:Name="frameConsul" Content="" HorizontalAlignment="Center" Height="416" Margin="0,18,0,0" VerticalAlignment="Top" Width="800"/>
+        <Frame x:Name="frameConsul" Content="" HorizontalAlignment="Center" Height="416" VerticalAlignment="Top" Width="800" NavigationUIVisibility="Hidden" Margin="0,53,0,0"/>
     </Grid>
 </Window>

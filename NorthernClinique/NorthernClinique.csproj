@@ -70,6 +70,9 @@
     <Compile Include="adminConsultation.xaml.cs">
       <DependentUpon>adminConsultation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminLitMedPatient.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="adminPersonnel.xaml.cs">
       <DependentUpon>adminPersonnel.xaml</DependentUpon>
     </Compile>
@@ -231,6 +234,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\pumpkin.png" />
+    <Resource Include="Images\doctor.png" />
+    <Resource Include="Images\bat.png" />
+    <Resource Include="Images\nurse pumpkin.png" />
+    <Resource Include="Images\spider.png" />
+    <Resource Include="Images\mummy.png" />
+    <Resource Include="Images\halloweenPattern.jpg" />
+    <Resource Include="Images\PumpkinAndCandle.jpg" />
+    <Resource Include="Images\happyhalloween.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

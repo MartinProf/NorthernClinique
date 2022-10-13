@@ -5,44 +5,107 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="ProcessusAdmission" Height="450" Width="800" Loaded="Window_Loaded" Closed="Window_Closed">
-    <Grid>
-        <Button x:Name="btnValiderAdmission" Content="Valider Admission" HorizontalAlignment="Left" Margin="648,383,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.178,0.517" Width="116" Height="32" Click="btnValiderAdmission_Click"/>
-        <CheckBox x:Name="checkbChirurgie" Content="Chirurgie" HorizontalAlignment="Left" Margin="313,332,0,0" VerticalAlignment="Top" Checked="checkbChirurgie_Checked"/>
-        <Label Content="Medecin" HorizontalAlignment="Left" Margin="91,177,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboMedecin" HorizontalAlignment="Left" Margin="69,201,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDMedecin" SelectionChanged="cboMedecin_SelectionChanged"/>
-        <GroupBox Header="Services" Margin="79,271,0,0" Height="121" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200">
-            <Grid>
-                <CheckBox x:Name="cBoxTelevision" Content="Location televiseur" HorizontalAlignment="Left" Margin="36,22,0,0" VerticalAlignment="Top" Checked="cBoxTelevision_Checked" Unchecked="cBoxTelevision_Unchecked"/>
-                <CheckBox x:Name="cbTelephone" Content="Location telephone" HorizontalAlignment="Left" Margin="36,61,0,0" VerticalAlignment="Top" Checked="cbTelephone_Checked" Unchecked="cbTelephone_Unchecked"/>
+        Title="ProcessusAdmission" Height="830" Width="1458" Loaded="Window_Loaded" WindowStyle="None" MaxHeight="830" MinHeight="830" MaxWidth="1458" MinWidth="1458">
+    <Grid Margin="4,0,-4,0">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FFAD7342" Offset="0.13"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <GroupBox x:Name="gbPatient" Margin="184,124,198,531" Header="Patient" FontFamily="Juice ITC" FontSize="16">
+            <Grid Margin="7,0,1,0" Height="154">
+                <Grid.Background>
+                    <ImageBrush/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="22*"/>
+                    <RowDefinition Height="53*"/>
+                </Grid.RowDefinitions>
+                <Label Content="NSS" HorizontalAlignment="Left" Margin="61,1,0,0" VerticalAlignment="Top" Width="86" Grid.Row="1" Grid.RowSpan="2" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="152,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" RenderTransformOrigin="0.337,0.393" IsEnabled="False" Height="50" Grid.Row="2" FontFamily="Juice ITC" FontSize="36"/>
+                <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="454,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" IsEnabled="False" Height="50" Grid.Row="2" FontFamily="Juice ITC" FontSize="36"/>
+                <Label Content="Nom" HorizontalAlignment="Left" Margin="257,2,0,0" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <Label Content="Prenom" HorizontalAlignment="Left" Margin="542,1,0,0" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <ComboBox x:Name="cbNSS" HorizontalAlignment="Left" Margin="46,4,0,0" VerticalAlignment="Top" Width="67" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="NSS" SelectionChanged="cbNSS_SelectionChanged" Height="50" Grid.Row="2" FontFamily="Juice ITC" FontSize="36"/>
+                <TextBox x:Name="txtboxAssure" HorizontalAlignment="Left" Height="50" Margin="835,4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67" Grid.Row="2" Visibility="Hidden"/>
+                <TextBox x:Name="txtboxAge" HorizontalAlignment="Left" Margin="757,4,0,52" TextWrapping="Wrap" Text="" Width="71" Grid.Row="2" FontFamily="Juice ITC" FontSize="36"/>
+                <Label Content="âge" HorizontalAlignment="Left" Margin="769,1,0,0" VerticalAlignment="Top" Grid.RowSpan="3" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <Label Content="Chambre souhaité" HorizontalAlignment="Left" Height="44" Margin="854,0,0,0" VerticalAlignment="Center" Width="204" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold" RenderTransformOrigin="0.5,0.358" Grid.Row="1"/>
+                <ComboBox x:Name="comboBSouhait" HorizontalAlignment="Left" Margin="882,4,0,0" VerticalAlignment="Top" Width="120" Height="50" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="description" Grid.Row="2" FontFamily="Juice ITC" FontSize="36"/>
             </Grid>
         </GroupBox>
-        <ComboBox x:Name="cboTypeChambre" HorizontalAlignment="Left" Margin="626,189,0,0" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.082,0.174" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="nom_departement" SelectionChanged="cboTypeChambre_SelectionChanged"/>
-        <Label Content="Département" HorizontalAlignment="Left" Margin="626,150,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboTypeLit" HorizontalAlignment="Left" Margin="626,316,0,0" VerticalAlignment="Top" Width="140" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="description"/>
-        <Label Content="Type de lit" HorizontalAlignment="Left" Margin="626,283,0,0" VerticalAlignment="Top"/>
-        <Grid Margin="35,80,261,286">
-            <Label Content="NSS" HorizontalAlignment="Left" Margin="28,3,0,0" VerticalAlignment="Top" Width="86"/>
-            <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="197,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.337,0.393" IsEnabled="False"/>
-            <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="362,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-            <Label Content="Nom" HorizontalAlignment="Left" Margin="197,3,0,0" VerticalAlignment="Top"/>
-            <Label Content="Prenom" HorizontalAlignment="Left" Margin="362,3,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="cbNSS" HorizontalAlignment="Left" Margin="28,27,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="NSS" SelectionChanged="cbNSS_SelectionChanged"/>
-        </Grid>
-        <DatePicker x:Name="datepChirurgie" HorizontalAlignment="Left" Margin="313,359,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboNumLit" HorizontalAlignment="Left" Margin="626,250,0,0" VerticalAlignment="Top" Width="139" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Numero_lit"/>
-        <Label Content="Numéro Lit" HorizontalAlignment="Left" Margin="627,216,0,0" VerticalAlignment="Top"/>
-        <Label Content="Prenom" HorizontalAlignment="Left" Margin="235,171,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nom" HorizontalAlignment="Left" Margin="400,171,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtBoxMedPrenom" HorizontalAlignment="Left" Height="26" Margin="235,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="103" IsEnabled="False"/>
-        <TextBox x:Name="txtBoxMedNom" HorizontalAlignment="Left" Height="28" Margin="400,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="113" IsEnabled="False"/>
-        <Label Content="Prix total quotidien" HorizontalAlignment="Left" Height="22" Margin="313,250,0,0" VerticalAlignment="Top" Width="123"/>
-        <TextBox x:Name="txtboxPrix" HorizontalAlignment="Left" Height="26" Margin="313,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="105" FontSize="16"/>
-        <Label Content="Type de lit souhaité" HorizontalAlignment="Left" Height="26" Margin="620,10,0,0" VerticalAlignment="Top" Width="137"/>
-        <ComboBox x:Name="comboBSouhait" HorizontalAlignment="Left" Margin="628,41,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="description"/>
-        <TextBox x:Name="txtboxAssure" HorizontalAlignment="Left" Height="17" Margin="620,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="txtboxAge" HorizontalAlignment="Left" Height="31" Margin="620,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="126"/>
-        <Button x:Name="btnCalculer" Content="Calculer" HorizontalAlignment="Left" Height="26" Margin="462,283,0,0" VerticalAlignment="Top" Width="107" Click="btnCalculer_Click"/>
-        <Button Content="Reset" HorizontalAlignment="Left" Height="39" Margin="513,332,0,0" VerticalAlignment="Top" Width="56" Click="Button_Click"/>
+        <Button x:Name="btnValiderAdmission" Content="Rechercher" HorizontalAlignment="Left" Margin="1272,653,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.178,0.517" Width="129" Height="50" Click="btnValiderAdmission_Click" FontFamily="Juice ITC" FontSize="36" FontWeight="Bold"/>
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="1272,726,0,0" VerticalAlignment="Top" Click="Button_Click_1" FontFamily="Juice ITC" FontSize="36" FontWeight="Bold" Width="129"/>
+        <Label Content="RECHERCHE PATIENT" HorizontalAlignment="Left" Margin="476,33,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="80" FontWeight="Bold">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF9137DC" Offset="1"/>
+                    <GradientStop Color="#FFF07900" Offset="0.522"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <GroupBox Header="Médecin" Margin="184,316,443,332" FontFamily="Juice ITC" FontSize="16">
+            <Grid Margin="10,0,-2,0">
+                <Grid.Background>
+                    <ImageBrush/>
+                </Grid.Background>
+                <Label Content="ID Medecin" HorizontalAlignment="Left" Margin="6,12,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <ComboBox x:Name="cboMedecin" HorizontalAlignment="Left" Margin="33,65,0,0" VerticalAlignment="Top" Width="67" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDMedecin" SelectionChanged="cboMedecin_SelectionChanged" Height="50" FontFamily="Juice ITC" FontSize="36"/>
+                <Label Content="Prenom" HorizontalAlignment="Left" Margin="242,12,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <Label Content="Nom" HorizontalAlignment="Left" Margin="553,12,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <TextBox x:Name="txtBoxMedPrenom" HorizontalAlignment="Left" Height="50" Margin="161,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" IsEnabled="False" FontFamily="Juice ITC" FontSize="36"/>
+                <TextBox x:Name="txtBoxMedNom" HorizontalAlignment="Left" Margin="455,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="50" IsEnabled="False" FontFamily="Juice ITC" FontSize="36"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Calcul du prix" Margin="1026,478,198,41" FontFamily="Juice ITC" FontSize="16">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Images/halloweenPattern.jpg" Opacity="0.5"/>
+                </Grid.Background>
+                <TextBox x:Name="txtboxPrix" HorizontalAlignment="Center" Height="50" Margin="0,70,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="110" FontSize="36" FontFamily="Juice ITC"/>
+                <Label Content="Prix quotidien" HorizontalAlignment="Center" Height="55" Margin="0,15,0,0" VerticalAlignment="Top" Width="150" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <Button x:Name="btnCalculer" Content="Calculer" HorizontalAlignment="Center" Height="50" Margin="0,147,0,0" VerticalAlignment="Top" Width="110" Click="btnCalculer_Click" FontFamily="Juice ITC" FontSize="36" FontWeight="Bold"/>
+                <Button Content="Reset" HorizontalAlignment="Center" Height="50" Margin="0,202,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click" FontFamily="Juice ITC" FontSize="36" FontWeight="Bold"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Option chirugie" Margin="184,517,1006,41" FontFamily="Juice ITC" FontSize="16">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Images/halloweenPattern.jpg" Opacity="0.5"/>
+                </Grid.Background>
+                <CheckBox x:Name="checkbChirurgie" Content="Chirurgie" HorizontalAlignment="Left" Margin="64,45,0,0" VerticalAlignment="Top" Checked="checkbChirurgie_Checked" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold" Height="48" Width="132"/>
+                <DatePicker x:Name="datepChirurgie" HorizontalAlignment="Center" Margin="0,168,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="20"/>
+                <Label Content="Date prévue" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Lit et Département" Margin="464,517,443,41" FontFamily="Juice ITC" FontSize="16">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Images/halloweenPattern.jpg" Opacity="0.5"/>
+                </Grid.Background>
+                <ComboBox x:Name="cboTypeLit" HorizontalAlignment="Left" Margin="295,163,0,0" VerticalAlignment="Top" Width="140" Height="50" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="description" FontFamily="Juice ITC" FontSize="36"/>
+                <Label Content="Type de chambre" HorizontalAlignment="Left" Margin="285,115,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <ComboBox x:Name="cboNumLit" HorizontalAlignment="Left" Margin="86,117,0,0" VerticalAlignment="Top" Width="87" Height="96" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Numero_lit" FontFamily="Juice ITC" FontSize="72"/>
+                <Label Content="Numéro Lit" HorizontalAlignment="Left" Margin="75,60,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <ComboBox x:Name="cboTypeChambre" HorizontalAlignment="Left" Margin="296,60,0,0" VerticalAlignment="Top" Width="139" Height="50" RenderTransformOrigin="0.082,0.174" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="nom_departement" SelectionChanged="cboTypeChambre_SelectionChanged" FontFamily="Juice ITC" FontSize="36"/>
+                <Label Content="Département" HorizontalAlignment="Left" Margin="302,14,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <Image HorizontalAlignment="Left" Height="112" Margin="-134,-538,0,0" VerticalAlignment="Top" Width="122" Source="/Images/spider.png"/>
+                <Image Height="112" Margin="509,-538,-97,0" VerticalAlignment="Top" Source="/Images/spider.png"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Commodités" Margin="1026,316,198,378" FontFamily="Juice ITC" FontSize="16">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Images/halloweenPattern.jpg" Opacity="0.5"/>
+                </Grid.Background>
+                <CheckBox x:Name="cBoxTelevision" Content="Loc. téléviseur" HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top" Checked="cBoxTelevision_Checked" Unchecked="cBoxTelevision_Unchecked" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+                <CheckBox x:Name="cbTelephone" Content="Loc. téléphone" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" Checked="cbTelephone_Checked" Unchecked="cbTelephone_Unchecked" FontFamily="Juice ITC" FontSize="30" FontWeight="Bold"/>
+            </Grid>
+        </GroupBox>
+        <Image HorizontalAlignment="Left" Height="142" Margin="1266,538,0,0" VerticalAlignment="Top" Width="127" Source="/Images/mummy.png"/>
     </Grid>
 </Window>

@@ -32,22 +32,31 @@ namespace NorthernClinique
         {
             myBDD = new Northern_Lights_HospitalEntities1();
 
-            Medecin medecin = new Medecin();
-            medecin.prenom = textBoxPrenom.Text;
-            medecin.nom = textBoxNom.Text;
-
-            myBDD.Medecin.Add(medecin);
-
-            try
+            if(string.IsNullOrEmpty(textBoxPrenom.Text) || string.IsNullOrEmpty(textBoxNom.Text))
             {
-                myBDD.SaveChanges();
-                MessageBox.Show("Le nouveau medevin a été ajouté avec succès");
-            }
-            catch (Exception ex)
+                MessageBox.Show("Veuillez remplir tous les champs!");
+            } else
             {
+                Medecin medecin = new Medecin();
+                medecin.prenom = textBoxPrenom.Text;
+                medecin.nom = textBoxNom.Text;
 
-                MessageBox.Show(ex.Message);
+                myBDD.Medecin.Add(medecin);
+
+                try
+                {
+                    myBDD.SaveChanges();
+                    MessageBox.Show("Le nouveau medevin a été ajouté avec succès");
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
+            
+
+           
         }
 
     }

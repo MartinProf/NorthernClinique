@@ -5,16 +5,36 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NorthernClinique"
       mc:Ignorable="d" 
-      d:DesignHeight="416" d:DesignWidth="800"
+      d:DesignHeight="694" d:DesignWidth="1215"
       Title="AjouterPerso">
 
-    <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
-        <Label Content="Ajouter Medecin" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="304" FontSize="36" FontWeight="Bold"/>
-        <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="500,325,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontWeight="Bold" Click="btnAjouter_Click"/>
-        <Label Content="Nom" HorizontalAlignment="Left" Height="49" Margin="219,128,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Prenom" HorizontalAlignment="Left" Height="49" Margin="426,128,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
-        <TextBox x:Name="textBoxNom" HorizontalAlignment="Left" Height="44" Margin="219,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="162" FontSize="24"/>
-        <TextBox x:Name="textBoxPrenom" HorizontalAlignment="Left" Height="44" Margin="426,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="162" FontSize="24"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/happyhalloween.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        <Label Content="Ajouter Medecin" HorizontalAlignment="Center" Height="106" Margin="0,28,0,0" VerticalAlignment="Top" Width="404" FontSize="80" FontFamily="Juice ITC" FontWeight="Bold"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="1010,272,0,0" VerticalAlignment="Top" Height="50" Width="116" FontSize="36" FontWeight="Bold" Click="btnAjouter_Click" Grid.Row="1" FontFamily="Juice ITC" Background="#FF5ADC23">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Nom" HorizontalAlignment="Left" Height="70" Margin="371,274,0,0" VerticalAlignment="Top" Width="162" FontSize="60" FontWeight="Bold" Foreground="#FF5ADC23" FontFamily="Juice ITC" Grid.RowSpan="2">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <Label Content="Prenom" HorizontalAlignment="Left" Height="76" Margin="686,271,0,0" VerticalAlignment="Top" Width="162" FontSize="60" FontWeight="Bold" FontFamily="Juice ITC" Grid.RowSpan="2" Foreground="#FF5ADC23">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <TextBox x:Name="textBoxNom" HorizontalAlignment="Left" Height="59" Margin="260,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="306" FontSize="24" Grid.Row="1"/>
+        <TextBox x:Name="textBoxPrenom" HorizontalAlignment="Left" Height="59" Margin="608,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="306
+                 " FontSize="24" Grid.Row="1"/>
 
     </Grid>
 </Page>
