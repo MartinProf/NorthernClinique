@@ -5,41 +5,55 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NorthernClinique"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="694" d:DesignWidth="1215"
       Title="tableauConsultation" Loaded="Page_Loaded">
+    <Page.Background>
+        <ImageBrush/>
+    </Page.Background>
 
-    <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
-        <Label Content="Tableau consultation" HorizontalAlignment="Left" Height="69" Margin="262,28,0,0" VerticalAlignment="Top" Width="370" FontSize="48" FontFamily="Juice ITC" FontWeight="Bold"/>
-        <Label Content="Taux d'occupation de l'hopital:" HorizontalAlignment="Left" Height="47" Margin="136,128,0,0" VerticalAlignment="Top" Width="369" FontSize="36" FontWeight="Bold" FontFamily="Juice ITC"/>
-        <Label x:Name="labelTauxOcc" Content="" HorizontalAlignment="Left" Height="93" Margin="510,106,0,0" VerticalAlignment="Top" Width="134" FontSize="72" FontFamily="Bodoni MT Black">
+    <Grid Background="#FF763B00">
+        <Image HorizontalAlignment="Left" Height="674" Margin="0,10,0,0" VerticalAlignment="Top" Width="1215" Source="Images/halloweenWeb.png" Opacity="0.5"/>
+
+        <Label x:Name="lblTableauConsult" Content="Tableau consultation" HorizontalAlignment="Left" Height="99" Margin="336,39,0,0" VerticalAlignment="Top" Width="596" FontSize="90" FontFamily="Juice ITC" FontWeight="Bold">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+
+        <Label x:Name="lblTauxOccup" Content="Taux d'occupation de l'hopital:" HorizontalAlignment="Left" Height="73" Margin="241,206,0,0" VerticalAlignment="Top" Width="495" FontSize="48" FontWeight="Bold" FontFamily="Juice ITC"/>
+        <Label x:Name="labelTauxOcc" Content="" HorizontalAlignment="Left" Height="94" Margin="837,185,0,0" VerticalAlignment="Top" Width="187" FontSize="72" FontFamily="Bodoni MT Black">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF8C37DC"/>
-                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFFD7300" Offset="0.513"/>
                 </LinearGradientBrush>
             </Label.Foreground>
 
         </Label>
-        <Label Content="Nombre de medecin en poste:" HorizontalAlignment="Left" Height="47" Margin="136,224,0,0" VerticalAlignment="Top" Width="369" FontSize="36" FontWeight="Bold" FontFamily="Juice ITC"/>
-        <Label x:Name="labelNombreMedecin" Content="" HorizontalAlignment="Left" Height="91" Margin="510,202,0,0" VerticalAlignment="Top" Width="134" FontSize="72" FontFamily="Bodoni MT Black">
+        <Label x:Name="lblNbMed" Content="Nombre de medecin en poste:" HorizontalAlignment="Left" Height="73" Margin="241,352,0,0" VerticalAlignment="Top" Width="495" FontSize="48" FontWeight="Bold" FontFamily="Juice ITC"/>
+        <Label x:Name="labelNombreMedecin" Content="" HorizontalAlignment="Left" Height="92" Margin="845,333,0,0" VerticalAlignment="Top" Width="134" FontSize="72" FontFamily="Bodoni MT Black">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7837DC"/>
-                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFFD7300" Offset="0.513"/>
                 </LinearGradientBrush>
             </Label.Foreground>
 
         </Label>
-        <Label Content="Nombre de patients actif:" HorizontalAlignment="Left" Height="47" Margin="136,320,0,0" VerticalAlignment="Top" Width="369" FontSize="36" FontWeight="Bold" FontFamily="Juice ITC"/>
-        <Label x:Name="labelPatientActif" Content="" HorizontalAlignment="Left" Height="90" Margin="506,296,0,0" VerticalAlignment="Top" Width="138" FontSize="72" FontFamily="Bodoni MT Black">
+        <Label x:Name="lblNbPatient" Content="Nombre de patients actif:" HorizontalAlignment="Left" Height="72" Margin="241,498,0,0" VerticalAlignment="Top" Width="495" FontSize="48" FontWeight="Bold" FontFamily="Juice ITC"/>
+        <Label x:Name="labelPatientActif" Content="" HorizontalAlignment="Left" Height="90" Margin="841,480,0,0" VerticalAlignment="Top" Width="138" FontSize="72" FontFamily="Bodoni MT Black">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF8C37DC"/>
-                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFFD7300" Offset="0.507"/>
                 </LinearGradientBrush>
             </Label.Foreground>
 
         </Label>
+        <Image HorizontalAlignment="Left" Height="248" Margin="981,480,-14,-34" VerticalAlignment="Top" Width="248" Source="Images/pumpkin.png"/>
 
     </Grid>
 </Page>

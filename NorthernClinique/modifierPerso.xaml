@@ -5,18 +5,71 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:NorthernClinique"
       mc:Ignorable="d" 
-      d:DesignHeight="416" d:DesignWidth="800"
+      d:DesignHeight="694" d:DesignWidth="1215"
       Title="modifierPerso" Loaded="Page_Loaded">
 
-    <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
-        <Label Content="Modifier Medecin" HorizontalAlignment="Center" Height="69" Margin="0,29,0,0" VerticalAlignment="Top" Width="322" FontSize="36" FontWeight="Bold"/>
-        <Button x:Name="btnModifier" Content="Modifier" HorizontalAlignment="Left" Margin="500,325,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontWeight="Bold" Click="btnModifier_Click"/>
-        <Label Content="ID medecin" HorizontalAlignment="Left" Height="49" Margin="90,150,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Nom" HorizontalAlignment="Left" Height="49" Margin="331,150,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Prenom" HorizontalAlignment="Left" Height="49" Margin="538,150,0,0" VerticalAlignment="Top" Width="162" FontSize="24" FontWeight="Bold"/>
-        <ComboBox x:Name="comboBIDMedecin" HorizontalAlignment="Left" Height="44" Margin="90,225,0,0" VerticalAlignment="Top" Width="162" FontSize="24" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDMedecin" SelectionChanged="comboBIDMedecin_SelectionChanged"/>
-        <TextBox x:Name="textBoxNom" HorizontalAlignment="Left" Height="44" Margin="331,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162" FontSize="24"/>
-        <TextBox x:Name="textBoxPrenom" HorizontalAlignment="Left" Height="44" Margin="538,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162" FontSize="24"/>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FFFFA3A3" Offset="1"/>
+                <GradientStop Color="#FF800E0E" Offset="0.503"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Modifier Medecin" HorizontalAlignment="Center" Height="116" Margin="366,64,373,0" VerticalAlignment="Top" Width="476" FontSize="90" FontWeight="Bold" FontFamily="Juice ITC" Background="{x:Null}">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="Gainsboro" Offset="0.517"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Button x:Name="btnModifier" Content="Modifier" HorizontalAlignment="Left" Margin="830,512,0,0" VerticalAlignment="Top" Height="74" Width="190" FontSize="40" FontWeight="Bold" Click="btnModifier_Click" FontFamily="Juice ITC" BorderBrush="#FFC71C1C" BorderThickness="3" Background="White"/>
+        <Label Content="ID medecin" HorizontalAlignment="Left" Height="84" Margin="188,280,0,0" VerticalAlignment="Top" Width="208" FontSize="60" FontWeight="Bold" FontFamily="Juice ITC">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFF9F8F8" Offset="0.517"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <Label Content="Nom" HorizontalAlignment="Left" Height="84" Margin="571,280,0,0" VerticalAlignment="Top" Width="204" FontSize="60" FontWeight="Bold" FontFamily="Juice ITC">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFF9F8F8" Offset="0.517"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <Label Content="Prenom" HorizontalAlignment="Left" Height="84" Margin="846,280,0,0" VerticalAlignment="Top" Width="204" FontSize="60" FontWeight="Bold" FontFamily="Juice ITC">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFF9F8F8" Offset="0.517"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <ComboBox x:Name="comboBIDMedecin" HorizontalAlignment="Left" Height="54" Margin="188,364,0,0" VerticalAlignment="Top" Width="204" FontSize="40" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDMedecin" SelectionChanged="comboBIDMedecin_SelectionChanged" FontFamily="Juice ITC"/>
+        <TextBox x:Name="textBoxNom" HorizontalAlignment="Left" Height="54" Margin="512,364,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" FontSize="40" FontFamily="Juice ITC"/>
+        <TextBox x:Name="textBoxPrenom" HorizontalAlignment="Left" Height="54" Margin="830,364,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="190" FontSize="40" FontFamily="Juice ITC"/>
+        <Image HorizontalAlignment="Left" Height="203" Margin="247,451,0,0" VerticalAlignment="Top" Width="542" Source="Images/halloweenBlood.png"/>
+        <Image HorizontalAlignment="Left" Height="216" Margin="903,59,0,0" VerticalAlignment="Top" Width="224" Source="Images/halloweenGhostBuster.png"/>
 
     </Grid>
 </Page>

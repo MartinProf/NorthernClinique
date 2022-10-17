@@ -47,7 +47,7 @@ namespace NorthernClinique
 
         private void MenuQuitter_Click(object sender, RoutedEventArgs e)
         {
-            Window window = new sessionAdmin();
+            Window window = new Acceuil();
             window.Show();
             this.Close();
         }

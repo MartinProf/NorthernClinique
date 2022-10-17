@@ -233,15 +233,26 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\pumpkin.png" />
-    <Resource Include="Images\doctor.png" />
-    <Resource Include="Images\bat.png" />
     <Resource Include="Images\nurse pumpkin.png" />
     <Resource Include="Images\spider.png" />
     <Resource Include="Images\mummy.png" />
     <Resource Include="Images\halloweenPattern.jpg" />
     <Resource Include="Images\PumpkinAndCandle.jpg" />
     <Resource Include="Images\happyhalloween.jpg" />
+    <Resource Include="Images\halloweenBlood.png" />
+    <Resource Include="Images\halloweenGhostBuster.png" />
+    <Resource Include="Images\halloweenHappy.png" />
+    <Resource Include="Images\halloweenWeb.png" />
+    <Resource Include="Images\pumpkinMad.png" />
+    <Resource Include="Images\halloweenBGpump.jpg" />
+    <Resource Include="Images\pumpkin.png" />
+    <Resource Include="Images\BGgif.gif" />
+    <Resource Include="Images\MummyCrowling.png" />
+    <Resource Include="Images\hphalloweenBoo.jpg" />
+    <Resource Include="Images\scarywitch.png" />
+    <Resource Include="Images\scarynurse.png" />
+    <Resource Include="Images\ItClown.png" />
+    <Resource Include="Images\balloon.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

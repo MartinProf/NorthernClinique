@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -68,7 +69,18 @@ namespace NorthernClinique
                 }
             }
 
-            
+            DoubleAnimation da = new DoubleAnimation();
+            DoubleAnimation da2 = new DoubleAnimation();
+            da.From = 75;
+            da.To = 105;
+            da2.From = 190;
+            da2.To = 220;
+            da.Duration = new Duration(TimeSpan.FromSeconds(1));
+            da.AutoReverse = true;
+            da2.AutoReverse = true;
+            btnModifier.BeginAnimation(Button.HeightProperty, da);
+            btnModifier.BeginAnimation(Button.WidthProperty, da2);
+
         }
 
     }

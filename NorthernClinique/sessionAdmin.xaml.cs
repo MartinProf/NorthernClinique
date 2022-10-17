@@ -38,11 +38,5 @@ namespace NorthernClinique
             window.Show();
         }
 
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            Window window = new Acceuil();
-            this.Close();
-            window.Show();
-        }
     }
 }

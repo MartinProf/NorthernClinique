@@ -5,34 +5,154 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="Ajouter Patient" Height="450" Width="800" Loaded="Window_Loaded" WindowStyle="None">
+        Title="Ajouter Patient" Height="808" Width="1331" Loaded="Window_Loaded" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="btnAjouterPatient" Content="Ajouter Patient" HorizontalAlignment="Left" Margin="375,370,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.178,0.517" Width="116" Height="36" Click="btnAjouterPatient_Click"/>
-        <GroupBox Header="Info patient" Margin="32,88,32,88">
-            <Grid>
-                <DatePicker x:Name="DPdateNaissance" HorizontalAlignment="Left" Margin="347,40,0,0" VerticalAlignment="Top"/>
-                <Label Content="Date Naissance" HorizontalAlignment="Left" Margin="347,15,0,0" VerticalAlignment="Top" Width="107"/>
-                <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="28,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.337,0.393"/>
-                <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="177,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtAdresse" HorizontalAlignment="Left" Margin="26,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtCodePostal" HorizontalAlignment="Left" Margin="474,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtProvince" HorizontalAlignment="Left" Margin="319,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtVille" HorizontalAlignment="Left" Margin="177,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <Label Content="Adresse" HorizontalAlignment="Left" Margin="28,85,0,0" VerticalAlignment="Top"/>
-                <Label Content="Code Postal" HorizontalAlignment="Left" Margin="474,85,0,0" VerticalAlignment="Top"/>
-                <Label Content="Province" HorizontalAlignment="Left" Margin="319,85,0,0" VerticalAlignment="Top"/>
-                <Label Content="Ville" HorizontalAlignment="Left" Margin="177,85,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Margin="26,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <Label Content="Telephone" HorizontalAlignment="Left" Margin="28,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.42,-0.17"/>
-                <Label Content="Nom" HorizontalAlignment="Left" Margin="28,17,0,0" VerticalAlignment="Top"/>
-                <Label Content="Prenom" HorizontalAlignment="Left" Margin="177,17,0,0" VerticalAlignment="Top"/>
-                <Label Content="Cie. assurance" HorizontalAlignment="Left" Margin="188,150,0,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="cboAssurance" HorizontalAlignment="Left" Margin="188,174,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboAssurance_SelectionChanged" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="nom_compagnie"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/BGgif.gif"/>
+        </Grid.Background>
+        <GroupBox Header="Info patient" Margin="32,149,32,37" FontFamily="Juice ITC" FontSize="30">
+            <GroupBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFF0964B" Offset="0.343"/>
+                </LinearGradientBrush>
+            </GroupBox.Foreground>
+            <Grid Margin="0,42,0,-42">
+                <DatePicker x:Name="DPdateNaissance" HorizontalAlignment="Left" Margin="900,250,0,0" VerticalAlignment="Top" Width="262" Height="50" FontFamily="Juice ITC" FontSize="36"/>
+                <Label Content="Date Naissance" HorizontalAlignment="Left" Margin="923,186,0,0" VerticalAlignment="Top" Width="225" Height="59" FontFamily="Juice ITC" FontSize="50" Background="{x:Null}">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="54,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.337,0.393" FontFamily="Juice ITC" FontSize="36" Height="50"/>
+                <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Margin="347,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="50" FontFamily="Juice ITC" FontSize="36"/>
+                <TextBox x:Name="txtAdresse" HorizontalAlignment="Left" Margin="54,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="50" FontFamily="Juice ITC" FontSize="36"/>
+                <TextBox x:Name="txtCodePostal" HorizontalAlignment="Left" Margin="643,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="50" FontFamily="Juice ITC" FontSize="36"/>
+                <TextBox x:Name="txtProvince" HorizontalAlignment="Left" Margin="440,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="50" FontFamily="Juice ITC" FontSize="36"/>
+                <TextBox x:Name="txtVille" HorizontalAlignment="Left" Margin="252,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="50" FontFamily="Juice ITC" FontSize="36"/>
+                <Label Content="Adresse" HorizontalAlignment="Left" Margin="77,291,0,0" VerticalAlignment="Top" Height="63" Width="128" FontFamily="Juice ITC" FontSize="50" Background="{x:Null}">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Label Content="Code Postal" HorizontalAlignment="Left" Margin="645,291,0,0" VerticalAlignment="Top" Height="66" Width="172" FontFamily="Juice ITC" FontSize="50" Background="{x:Null}">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Label Content="Province" HorizontalAlignment="Left" Margin="458,291,0,0" VerticalAlignment="Top" Height="61" Width="138" FontFamily="Juice ITC" FontSize="50" RenderTransformOrigin="0.507,0.064" Background="{x:Null}">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Label Content="Ville" HorizontalAlignment="Left" Margin="300,291,0,0" VerticalAlignment="Top" Height="65" Width="76" FontFamily="Juice ITC" FontSize="50" Background="{x:Null}">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Margin="643,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Juice ITC" FontSize="36" Height="51"/>
+                <Label Content="Telephone" HorizontalAlignment="Left" Margin="658,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.42,-0.17" Height="64" Width="151" FontFamily="Juice ITC" FontSize="50" Background="{x:Null}">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Label Content="Nom" HorizontalAlignment="Left" Margin="101,29,0,0" VerticalAlignment="Top" Height="64" Width="73" FontFamily="Juice ITC" FontSize="50" RenderTransformOrigin="1.281,0.531" Background="{x:Null}">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Label Content="Prenom" HorizontalAlignment="Left" Margin="376,29,0,0" VerticalAlignment="Top" Height="72" Width="110" FontFamily="Juice ITC" FontSize="50" RenderTransformOrigin="0.8,0.521" Background="{x:Null}">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Label Content="Cie. assurance" HorizontalAlignment="Left" Margin="923,27,0,0" VerticalAlignment="Top" Height="71" Width="213" FontFamily="Juice ITC" FontSize="50" Background="{x:Null}">
+                    <Label.Effect>
+                        <DropShadowEffect/>
+                    </Label.Effect>
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <ComboBox x:Name="cboAssurance" HorizontalAlignment="Left" Margin="900,98,0,0" VerticalAlignment="Top" Width="262" SelectionChanged="cboAssurance_SelectionChanged" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="nom_compagnie" Height="50" FontFamily="Juice ITC" FontSize="36" RenderTransformOrigin="0.592,0.37"/>
+                <Button x:Name="btnAjouterPatient" Content="Ajouter Patient" HorizontalAlignment="Left" Margin="900,361,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.178,0.517" Width="125" Height="50" Click="btnAjouterPatient_Click" FontFamily="Juice ITC" FontSize="20"/>
+                <Button x:Name="btnAdmission" Content="Procéder admission" HorizontalAlignment="Left" Margin="1040,361,0,0" VerticalAlignment="Top" Height="50" Width="125" Click="btnAdmission_Click" FontFamily="Juice ITC" FontSize="20"/>
+                <Button Content="Terminer" HorizontalAlignment="Left" Margin="1040,448,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.045,0.163" Click="Button_Click" Height="50" Width="125" FontFamily="Juice ITC" FontSize="26"/>
             </Grid>
         </GroupBox>
-        <Button x:Name="btnAdmission" Content="Procéder admission" HorizontalAlignment="Left" Margin="513,370,0,0" VerticalAlignment="Top" Height="36" Width="121" Click="btnAdmission_Click"/>
-        <Label Content="Ajouter Patient" HorizontalAlignment="Center" Height="40" Margin="0,27,0,0" VerticalAlignment="Top" Width="188" FontSize="24" FontWeight="Bold"/>
-        <Button Content="Terminer" HorizontalAlignment="Left" Margin="681,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.045,0.163" Click="Button_Click"/>
+        <Label Content="Ajouter Patient" HorizontalAlignment="Center" Height="111" Margin="445,33,437,0" VerticalAlignment="Top" Width="441" FontSize="90" FontWeight="Bold" FontFamily="Juice ITC" Background="{x:Null}">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFF0964B" Offset="0.403"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
 
     </Grid>
 </Window>
