@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="sessionPrepose" Height="600" Width="1200">
     <Grid>
-        <Button x:Name="btnAdmission" Content="Processus d'admission" HorizontalAlignment="Left" Margin="250,225,0,0" VerticalAlignment="Top" Height="125" Width="300" FontSize="30" Click="btnAdmission_Click" FontFamily="Bahnschrift SemiBold Condensed" Background="Black">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="btnAdmission" Content="Processus d'admission" HorizontalAlignment="Left" Margin="191,225,0,0" VerticalAlignment="Top" Height="125" Width="300" FontSize="44" Click="btnAdmission_Click" FontFamily="Juice ITC" Background="Black">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -15,17 +21,18 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
             <Button.Effect>
-                <DropShadowEffect/>
+                <DropShadowEffect Color="#FF00196C"/>
             </Button.Effect>
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FFF07900" Offset="0"/>
+                    <GradientStop Color="White" Offset="0.873"/>
+                    <GradientStop Color="#FF00196C" Offset="0"/>
+                    <GradientStop Color="#FF27376A" Offset="0.51"/>
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="btnPatient" Content="Nouveau patient" HorizontalAlignment="Left" Margin="650,225,0,0" VerticalAlignment="Top" Height="125" Width="300" FontSize="30" Click="btnPatient_Click" Background="Black" FontFamily="Bahnschrift SemiBold Condensed">
+        <Button x:Name="btnPatient" Content="Nouveau patient" HorizontalAlignment="Left" Margin="597,225,0,0" VerticalAlignment="Top" Height="125" Width="300" FontSize="44" Click="btnPatient_Click" Background="Black" FontFamily="Juice ITC">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -33,14 +40,16 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
             <Button.Effect>
-                <DropShadowEffect/>
+                <DropShadowEffect Color="#FF831C1C"/>
             </Button.Effect>
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFF079FF"/>
-                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF2E0212"/>
+                    <GradientStop Color="White" Offset="0.753"/>
+                    <GradientStop Color="#FF831C1C" Offset="0.537"/>
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
+        <Image HorizontalAlignment="Left" Height="559" Margin="883,0,-66,0" VerticalAlignment="Top" Width="375" Source="Images/scarynurse.png"/>
     </Grid>
 </Window>

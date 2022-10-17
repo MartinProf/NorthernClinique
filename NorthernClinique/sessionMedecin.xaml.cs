@@ -42,9 +42,10 @@ namespace NorthernClinique
             Admission admin = BDD.Admission.FirstOrDefault(s => s.IDAdmission == vue.NoAdmission);
             Lit lit = BDD.Lit.FirstOrDefault(t => t.Numero_lit == vue.NoLit);
 
-            if(dpConge.SelectedDate >= DateTime.Today)
+            if (dpConge.SelectedDate >= DateTime.Today)
             {
-                if (lit.occupe == true) {
+                if (lit.occupe == true)
+                {
                     try
                     {
                         admin.date_du_congé = dpConge.SelectedDate;
@@ -56,62 +57,20 @@ namespace NorthernClinique
                     {
                         MessageBox.Show(ex.Message);
                     }
-                } else { MessageBox.Show("Le congé a déjà été accordé!"); }
+                }
+                else { MessageBox.Show("Le congé a déjà été accordé!"); }
             }
             else MessageBox.Show("La date entrée est invalide!");
 
-            //BDD = new Northern_Lights_HospitalEntities1();
-            //Admission admission = comboboxIdadmission.SelectedItem as Admission;
+            dgConge.DataContext = BDD.AdminLitMedPatient.ToList();
 
-            //if (dpConge.SelectedDate >= DateTime.Today)
-            //{
-            //    try {
-            //        miseAjourAdmission(admission.IDAdmission, (DateTime)dpConge.SelectedDate);
-            //        miseAJourLit(admission.Numero_lit);
-            //        BDD.SaveChanges();
-            //        MessageBox.Show("Congé accordé!");
-            //    }
-            //    catch (Exception ex) {
-            //        MessageBox.Show(ex.Message);
-            //    }
-
-            //}else MessageBox.Show("Transaction refusé, la date entrée est non valide!");
-
-            //dgConge.DataContext = BDD.Admission.Where(a => a.date_du_congé == null).ToList();
         }
-
-       
-        //public static void miseAJourLit(int numeroDuLit)
-        //{
-        //    var BDD = new Northern_Lights_HospitalEntities1();
-        //    {
-        //        Lit lit = BDD.Lit.FirstOrDefault(t => t.Numero_lit == numeroDuLit);
-        //        if (lit != null)
-        //        {
-        //            lit.occupe = false;
-        //            BDD.SaveChanges();
-        //        }
-        //    }
-        //}
-
-        //public static void miseAjourAdmission(int idAdmission, DateTime date) 
-        //{
-        //    var BDD = new Northern_Lights_HospitalEntities1();
-        //    {
-        //        Admission admission = BDD.Admission.FirstOrDefault(t => t.IDAdmission == idAdmission);
-        //        if (admission != null)
-        //        {
-        //            admission.date_du_congé = date;
-        //            BDD.SaveChanges();
-        //        }
-        //    }
-        //}
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            var acceuil = new Acceuil();
-            acceuil.Show();
+            Acceuil acceuil = new Acceuil();       
             this.Hide();
+            acceuil.Show();
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace NorthernClinique
 {
@@ -33,6 +34,25 @@ namespace NorthernClinique
             labelTauxOcc.Content = (int)TauxOccupation() + "%";
             labelNombreMedecin.Content = NombreMedecin();
             labelPatientActif.Content = NombrePatient();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += timer_Tick;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 1000);
+            timer.Start();
+        }
+
+        private bool BlinkOn = false;
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (BlinkOn)
+            {
+                lblTableauConsult.Foreground = Brushes.Orange;
+            }
+            else
+            {
+                lblTableauConsult.Foreground = Brushes.Black;
+            }
+            BlinkOn = !BlinkOn;
         }
 
         private float TauxOccupation() 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernClinique"
         mc:Ignorable="d"
-        Title="Menu Personnel" Height="808" Width="1331" Loaded="Window_Loaded" WindowStyle="None">
+        Title="Menu Personnel" Height="808" Width="1331" MaxHeight="808" MaxWidth="1331" MinHeight="808" MinWidth="1331" Loaded="Window_Loaded" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Images/PumpkinAndCandle.jpg"/>
@@ -18,12 +18,12 @@
                     <GradientStop Color="#FF8C5A00" Offset="0.496"/>
                 </LinearGradientBrush>
             </Menu.Background>
-            <MenuItem Header = "Option" Width="150" Height="43" FontFamily="Juice ITC" FontSize="22" FontWeight="Bold">
+            <MenuItem Header = "Option" Margin="30,0,0,0" Width="100" Height="43" FontFamily="Juice ITC" FontSize="22" FontWeight="Bold">
                 <MenuItem x:Name="menuIAjouter" Header = "Ajouter"  Width = "180" Click = "MenuAjouter_Click" />
                 <MenuItem x:Name="menuIModifier" Header = "Modifier" Width = "180" Click = "MenuModifier_Click" />
                 <MenuItem x:Name="menuISupprimer" Header = "Supprimer"  Width = "180" Click = "MenuSupprimer_Click" />
             </MenuItem>
-            <MenuItem Header = "Quitter" Width="150" FontFamily="Juice ITC" FontSize="22" FontWeight="Bold" Height="45">
+            <MenuItem Header = "Quitter" Margin="30,0,0,0" Width="100" FontFamily="Juice ITC" FontSize="22" FontWeight="Bold" Height="45">
                 <MenuItem Header = "Quitter" HorizontalAlignment = "Left" Width = "140" Click = "MenuQuitter_Click" />
             </MenuItem>
         </Menu>
