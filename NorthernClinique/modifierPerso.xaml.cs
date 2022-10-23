@@ -53,6 +53,7 @@ namespace NorthernClinique
                 MessageBox.Show("Veuillez remplir tous les champs!");
             } else
             {
+                //Modification du médecin en le sélectionnant avec son ID
                 medecin.IDMedecin = int.Parse(comboBIDMedecin.Text);
                 medecin.nom = textBoxNom.Text;
                 medecin.prenom = textBoxPrenom.Text;
@@ -69,6 +70,7 @@ namespace NorthernClinique
                 }
             }
 
+            //Animationm du bouton lors du click
             DoubleAnimation da = new DoubleAnimation();
             DoubleAnimation da2 = new DoubleAnimation();
             da.From = 75;

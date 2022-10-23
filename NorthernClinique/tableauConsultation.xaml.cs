@@ -27,6 +27,7 @@ namespace NorthernClinique
             InitializeComponent();
         }
 
+        //Affichage de statistiques au chargement de la page
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             myBDD = new Northern_Lights_HospitalEntities1();
@@ -35,12 +36,15 @@ namespace NorthernClinique
             labelNombreMedecin.Content = NombreMedecin();
             labelPatientActif.Content = NombrePatient();
 
+            //Timer pour le changement de couleur du titre
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += timer_Tick;
             timer.Interval = new TimeSpan(0, 0, 0, 0, 1000);
             timer.Start();
         }
 
+
+        //Animation changement de couleur du titre
         private bool BlinkOn = false;
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -55,6 +59,7 @@ namespace NorthernClinique
             BlinkOn = !BlinkOn;
         }
 
+        //Calculs des statistiques affichées
         private float TauxOccupation() 
         {
             float queryOccupe = myBDD.Lit.Where(l => l.occupe==true).Count();

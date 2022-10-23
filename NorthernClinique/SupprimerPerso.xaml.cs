@@ -47,11 +47,12 @@ namespace NorthernClinique
         {
             int medecinARetirer = (comboBIDMedecin.SelectedItem as Medecin).IDMedecin;
 
+            //Retrait du médecin selectionné en fonction de son ID
             Medecin medecin = (from m in myBDD.Medecin where m.IDMedecin == medecinARetirer select m).SingleOrDefault();
             myBDD.Medecin.Remove(medecin);
 
 
-
+            //Validation du choix
             if (MessageBox.Show("Êtes-vous sûr de vouloir procéder à la supression?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 try

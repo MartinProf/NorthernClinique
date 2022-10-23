@@ -53,6 +53,9 @@ namespace NorthernClinique
                     txtLogin.Text = "";
                     pwLogin.Password = "";
                     cboLogin.SelectedItem = null;
+
+                    //Direction vers la bonne session selon le rôle
+
                     if(Application.Current.Properties["posteOccupe"].ToString() == "Administrateur")
                     {
                         sessionAdmin sessionAdmin = new sessionAdmin();
@@ -80,6 +83,7 @@ namespace NorthernClinique
             }
         }
 
+        //Validation du user, du password et de son poste
         private Utilisateur trouverUtilisateur(string nomUtilisateur, string motPasse, string posteOccupe)
         {
             Utilisateur utilisateur = utilisateurs.SingleOrDefault(s => s.nomUtilisateur == nomUtilisateur && s.motPasse == motPasse && s.posteOccupe == posteOccupe);
