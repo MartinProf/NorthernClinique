@@ -24,6 +24,7 @@ namespace NorthernClinique
             InitializeComponent();
         }
 
+        //Ouverture des différents frames selon le choix dans le menu
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             framePerso.Content = new AjouterPerso();

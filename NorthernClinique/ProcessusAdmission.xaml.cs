@@ -32,6 +32,7 @@ namespace NorthernClinique
         {
             myBDD = new Northern_Lights_HospitalEntities1();
 
+            //Remplissage des combobox 
             Patient patient = cbNSS.SelectedItem as Patient;
             cbNSS.DataContext = myBDD.Patient.ToList();
 
@@ -41,6 +42,7 @@ namespace NorthernClinique
             Departement departement = cboTypeChambre.SelectedItem as Departement;
             cboTypeChambre.DataContext = myBDD.Departement.ToList();
 
+            //Jointure de 3 tables pour le type de lit, son numéro et le département qui l'accueil
             var queryTypeLit =
                 (from a in myBDD.Departement
                  join b in myBDD.Lit on a.IDDepartement equals b.IDDepartement
@@ -59,8 +61,10 @@ namespace NorthernClinique
         {
             Admission admission = new Admission();
 
+            //Validattion de disponibilité de lit
             if (nombrePatientAvecLit() < placeDisponible())
             {
+                //Validation de la date de chirurgie si la checkbox est cochée
                 if (checkbChirurgie.IsChecked == true)
                 {
                     try
@@ -72,12 +76,14 @@ namespace NorthernClinique
                     {
                         MessageBox.Show("Vous devez entrer une date de chirurgie!");
                     }
-                }
+                }                
                 admission.date_admission = DateTime.Now;
+                //Les options de la chambre pour le calcul du prix
                 if (cBoxTelevision.IsChecked == true) admission.televiseur = true;
                 if (cbTelephone.IsChecked == true) admission.telephone = true;
                 admission.NSS = int.Parse(cbNSS.Text);
 
+                //Création de l'admission 
                 try
                 {
                     admission.Numero_lit = int.Parse(cboNumLit.Text);
@@ -102,6 +108,7 @@ namespace NorthernClinique
             this.Close();
         }
 
+        //Le changement syncro des combobox lit, type de lite et dpéartement
         private void cboTypeChambre_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int indice = cboTypeChambre.SelectedIndex+1;
@@ -123,6 +130,7 @@ namespace NorthernClinique
 
         }
 
+        //Le changement syncro des info du patient qui ajuste le type de chambre si le patient à moins de 16 ans
         private void cbNSS_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Patient patient = cbNSS.SelectedItem as Patient;
@@ -142,6 +150,7 @@ namespace NorthernClinique
             
         }
 
+        //Le changement syncro des info du médecin
         private void cboMedecin_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Medecin medecin = cboMedecin.SelectedItem as Medecin;
@@ -149,6 +158,7 @@ namespace NorthernClinique
             txtBoxMedPrenom.Text = medecin.prenom.ToString();
         }
 
+        //Décompte des patients
         private int nombrePatientAvecLit() {
             int nombrePatientAvecLit = (from a in myBDD.Admission
                                         where a.date_du_congé == null
@@ -157,6 +167,7 @@ namespace NorthernClinique
             return nombrePatientAvecLit;
         }
 
+        //Décompte des places disponibles
         private int placeDisponible() {
             int placeDisponible = (from a in myBDD.Lit
                                    select a.Numero_lit).Count();
@@ -164,6 +175,7 @@ namespace NorthernClinique
             return placeDisponible;
         }
 
+        //Change le status du lit à occupé lors de l'admission
         public static void miseAJourLit(int numeroDuLit) {
             var BDD = new Northern_Lights_HospitalEntities1();
             {
@@ -176,6 +188,7 @@ namespace NorthernClinique
             }
         }
 
+        //Ajout du prix de la télé si l'option est sélectionné
         private void cBoxTelevision_Checked(object sender, RoutedEventArgs e)
         {
             float montant = float.Parse(txtboxPrix.Text);
@@ -183,6 +196,7 @@ namespace NorthernClinique
             txtboxPrix.Text = (montant+ televiseur).ToString();
         }
 
+        //Enlève le coût de la télé si la checkbox est désélectionnée
         private void cBoxTelevision_Unchecked(object sender, RoutedEventArgs e)
         {
             float montant = float.Parse(txtboxPrix.Text);
@@ -190,6 +204,7 @@ namespace NorthernClinique
             txtboxPrix.Text = (montant- televiseur).ToString();
         }
 
+        //Ajout du prix du téléphone si l'option est sélectionné
         private void cbTelephone_Checked(object sender, RoutedEventArgs e)
         {
             float montant = float.Parse(txtboxPrix.Text);
@@ -197,6 +212,7 @@ namespace NorthernClinique
             txtboxPrix.Text = (montant + telephone).ToString();
         }
 
+        //Enlève le coût du téléphone si la checkbox est désélectionnée
         private void cbTelephone_Unchecked(object sender, RoutedEventArgs e)
         {
             float montant = float.Parse(txtboxPrix.Text);
@@ -204,6 +220,7 @@ namespace NorthernClinique
             txtboxPrix.Text = (montant - telephone).ToString();
         }
 
+        //Ajoute le prix selon le type de chambre sélectionnée
          private void btnCalculer_Click(object sender, RoutedEventArgs e)
         {
             int indexSouhaite = comboBSouhait.SelectedIndex;
@@ -235,6 +252,7 @@ namespace NorthernClinique
             }
         }
 
+        //Réinitialise le calcul du prix
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             txtboxPrix.Text = "0";

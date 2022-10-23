@@ -29,23 +29,24 @@ namespace NorthernClinique
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             BDD = new Northern_Lights_HospitalEntities1();
-            //dgConge.DataContext = BDD.Admission.Where(a => a.date_du_congé == null).ToList();
-            //comboboxIdadmission.DataContext = BDD.Admission.Where(a => a.date_du_congé == null).ToList();
             dpConge.SelectedDate = DateTime.Today;
+            //Affichage de la vue crée (seulement les lits occupés sont affichés)
             dgConge.DataContext = BDD.AdminLitMedPatient.ToList();
         }
 
+        
         private void btnAutoriser_Click(object sender, RoutedEventArgs e)
         {
             AdminLitMedPatient vue = dgConge.SelectedItem as AdminLitMedPatient;
 
+            //instanciation de admin et lit en liant les tables d'origines aux vues 
             Admission admin = BDD.Admission.FirstOrDefault(s => s.IDAdmission == vue.NoAdmission);
             Lit lit = BDD.Lit.FirstOrDefault(t => t.Numero_lit == vue.NoLit);
 
+            //Validation que la date est égales ou supérieure à celle d'aujourd'hui
             if (dpConge.SelectedDate >= DateTime.Today)
             {
-                if (lit.occupe == true)
-                {
+                    //Application de la date du congé et changement de status du lit à false
                     try
                     {
                         admin.date_du_congé = dpConge.SelectedDate;
@@ -57,11 +58,11 @@ namespace NorthernClinique
                     {
                         MessageBox.Show(ex.Message);
                     }
-                }
-                else { MessageBox.Show("Le congé a déjà été accordé!"); }
+                
             }
             else MessageBox.Show("La date entrée est invalide!");
 
+            //Rafraîchissement du datagrid pour enlever le congé ayant été accordé
             dgConge.DataContext = BDD.AdminLitMedPatient.ToList();
 
         }

@@ -51,6 +51,7 @@ namespace NorthernClinique
 
         }
 
+        //Créatation d'un nouveau patient
         private void btnAjouterPatient_Click(object sender, RoutedEventArgs e)
         {
 
