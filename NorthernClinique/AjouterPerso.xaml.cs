@@ -37,6 +37,7 @@ namespace NorthernClinique
                 MessageBox.Show("Veuillez remplir tous les champs!");
             } else
             {
+                //Enregistrement d'un nouveau médecin dans la BDD
                 Medecin medecin = new Medecin();
                 medecin.prenom = textBoxPrenom.Text;
                 medecin.nom = textBoxNom.Text;
