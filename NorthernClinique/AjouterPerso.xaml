@@ -16,18 +16,18 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Images/happyhalloween.jpg" Stretch="Fill"/>
         </Grid.Background>
-        <Label Content="Ajouter Medecin" HorizontalAlignment="Center" Height="106" Margin="0,28,0,0" VerticalAlignment="Top" Width="404" FontSize="80" FontFamily="Juice ITC" FontWeight="Bold"/>
-        <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="1010,272,0,0" VerticalAlignment="Top" Height="50" Width="116" FontSize="36" FontWeight="Bold" Click="btnAjouter_Click" Grid.Row="1" FontFamily="Juice ITC" Background="#FF5ADC23">
+        <Label Content="Ajouter Medecin" HorizontalAlignment="Center" Height="106" Margin="260,28,301,0" VerticalAlignment="Top" Width="654" FontSize="80" FontFamily="Juice ITC" FontWeight="Bold"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" HorizontalAlignment="Left" Margin="988,272,0,0" VerticalAlignment="Top" Height="50" Width="138" FontSize="36" FontWeight="Bold" Click="btnAjouter_Click" Grid.Row="1" FontFamily="Juice ITC" Background="#FF5ADC23">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Label Content="Nom" HorizontalAlignment="Left" Height="70" Margin="371,274,0,0" VerticalAlignment="Top" Width="162" FontSize="60" FontWeight="Bold" Foreground="#FF5ADC23" FontFamily="Juice ITC" Grid.RowSpan="2">
+        <Label Content="Nom" HorizontalAlignment="Left" Height="85" Margin="260,257,0,0" VerticalAlignment="Top" Width="306" FontSize="60" FontWeight="Bold" Foreground="#FF5ADC23" FontFamily="Juice ITC" Grid.RowSpan="2">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Label Content="Prenom" HorizontalAlignment="Left" Height="76" Margin="686,271,0,0" VerticalAlignment="Top" Width="162" FontSize="60" FontWeight="Bold" FontFamily="Juice ITC" Grid.RowSpan="2" Foreground="#FF5ADC23">
+        <Label Content="Prenom" HorizontalAlignment="Left" Height="85" Margin="608,257,0,0" VerticalAlignment="Top" Width="306" FontSize="60" FontWeight="Bold" FontFamily="Juice ITC" Grid.RowSpan="2" Foreground="#FF5ADC23">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>

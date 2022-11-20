@@ -15,7 +15,7 @@
                 <GradientStop Color="#FF14291B" Offset="0.277"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Congé patients" HorizontalAlignment="Center" Height="118" Margin="407,29,309,0" VerticalAlignment="Top" Width="430" FontSize="90" FontWeight="Bold" FontFamily="Juice ITC">
+        <Label Content="Congé patients" HorizontalAlignment="Center" Height="118" Margin="245,29,213,0" VerticalAlignment="Top" Width="688" FontSize="90" FontWeight="Bold" FontFamily="Juice ITC">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3D4641" Offset="0"/>
@@ -24,7 +24,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <DatePicker x:Name="dpConge" HorizontalAlignment="Left" Margin="245,0,0,129" Width="235" FontSize="30" Height="42" VerticalAlignment="Bottom" FontFamily="Juice ITC" Background="#FF0A0909">
+        <DatePicker x:Name="dpConge" HorizontalAlignment="Left" Margin="126,0,0,129" Width="354" FontSize="30" Height="42" VerticalAlignment="Bottom" FontFamily="Juice ITC" Background="#FF0A0909">
             <DatePicker.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF687266"/>
@@ -33,7 +33,7 @@
                 </LinearGradientBrush>
             </DatePicker.Foreground>
         </DatePicker>
-        <Label Content="Date du congé" HorizontalAlignment="Left" Margin="245,0,0,176" Width="209" FontSize="48" FontWeight="Bold" Height="64" VerticalAlignment="Bottom" FontFamily="Juice ITC"/>
+        <Label Content="Date du congé" HorizontalAlignment="Left" Margin="126,0,0,176" Width="354" FontSize="48" FontWeight="Bold" Height="64" VerticalAlignment="Bottom" FontFamily="Juice ITC"/>
         <DataGrid x:Name="dgConge" Margin="32,152,41,297" AutoGenerateColumns="True" ItemsSource="{Binding}" FontFamily="Juice ITC" FontSize="30">
             <DataGrid.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -44,7 +44,7 @@
             </DataGrid.Foreground>
         </DataGrid>
         <Image HorizontalAlignment="Left" Height="374" Margin="798,362,-40,0" VerticalAlignment="Top" Width="388" Source="Images/scarywitch.png"/>
-        <Button x:Name="btnAutoriser" Content="Autoriser" HorizontalAlignment="Left" Margin="637,0,0,129" Width="200" FontSize="30" FontWeight="Bold" Click="btnAutoriser_Click" Height="42" VerticalAlignment="Bottom" FontFamily="Juice ITC" Background="Black">
+        <Button x:Name="btnAutoriser" Content="Autoriser" HorizontalAlignment="Left" Margin="580,0,0,112" Width="246" FontSize="50" FontWeight="Bold" Click="btnAutoriser_Click" Height="75" VerticalAlignment="Bottom" FontFamily="Juice ITC" Background="Black">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFFFEFE"/>

@@ -13,7 +13,7 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="btnAdmission" Content="Processus d'admission" HorizontalAlignment="Left" Margin="191,225,0,0" VerticalAlignment="Top" Height="125" Width="300" FontSize="44" Click="btnAdmission_Click" FontFamily="Juice ITC" Background="Black">
+        <Button x:Name="btnAdmission" Content="Processus d'admission" HorizontalAlignment="Left" Margin="139,123,0,0" VerticalAlignment="Top" Height="125" Width="454" FontSize="44" Click="btnAdmission_Click" FontFamily="Juice ITC" Background="Black">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -32,7 +32,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="btnPatient" Content="Nouveau patient" HorizontalAlignment="Left" Margin="597,225,0,0" VerticalAlignment="Top" Height="125" Width="300" FontSize="44" Click="btnPatient_Click" Background="Black" FontFamily="Juice ITC">
+        <Button x:Name="btnPatient" Content="Nouveau patient" HorizontalAlignment="Left" Margin="139,311,0,0" VerticalAlignment="Top" Height="125" Width="454" FontSize="44" Click="btnPatient_Click" Background="Black" FontFamily="Juice ITC">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>

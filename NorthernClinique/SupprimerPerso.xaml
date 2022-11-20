@@ -15,7 +15,7 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Supprimer Medecin" HorizontalAlignment="Center" Height="117" Margin="352,47,335,0" VerticalAlignment="Top" Width="528" FontSize="90" FontWeight="Bold" FontFamily="Juice ITC">
+        <Label Content="Supprimer Medecin" HorizontalAlignment="Center" Height="117" Margin="207,62,157,0" VerticalAlignment="Top" Width="851" FontSize="90" FontWeight="Bold" FontFamily="Juice ITC">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF5F0707" Offset="0"/>
@@ -25,7 +25,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="849,526,0,0" VerticalAlignment="Top" Height="80" Width="260" FontSize="50" FontWeight="Bold" Click="btnSupprimer_Click" FontFamily="Juice ITC" Background="Black">
+        <Button x:Name="btnSupprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="815,511,0,0" VerticalAlignment="Top" Height="95" Width="294" FontSize="50" FontWeight="Bold" Click="btnSupprimer_Click" FontFamily="Juice ITC" Background="Black">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF590303" Offset="0.007"/>
@@ -35,7 +35,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Label Content="Nom" HorizontalAlignment="Left" Height="76" Margin="567,233,0,0" VerticalAlignment="Top" Width="78" FontSize="50" FontWeight="Bold" FontFamily="Juice ITC" Background="{x:Null}">
+        <Label Content="Nom" HorizontalAlignment="Left" Height="76" Margin="480,233,0,0" VerticalAlignment="Top" Width="165" FontSize="50" FontWeight="Bold" FontFamily="Juice ITC" Background="{x:Null}">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF2B0000" Offset="0"/>
@@ -45,7 +45,7 @@
             </Label.Foreground>
         </Label>
         <Image HorizontalAlignment="Left" Height="654" Margin="-86,40,0,0" VerticalAlignment="Top" Width="470" Source="Images/ItClown.png"/>
-        <Label Content="Prenom" HorizontalAlignment="Left" Height="76" Margin="915,234,0,0" VerticalAlignment="Top" Width="123" FontSize="50" FontWeight="Bold" FontFamily="Juice ITC" Background="{x:Null}">
+        <Label Content="Prenom" HorizontalAlignment="Left" Height="76" Margin="849,234,0,0" VerticalAlignment="Top" Width="189" FontSize="50" FontWeight="Bold" FontFamily="Juice ITC" Background="{x:Null}">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF2B0000" Offset="0"/>
@@ -57,7 +57,7 @@
         <TextBox x:Name="textBoxNom" HorizontalAlignment="Left" Height="72" Margin="480,314,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="260" FontSize="50" IsReadOnly="True" FontFamily="Juice ITC"/>
         <TextBox x:Name="textBoxPrenom" HorizontalAlignment="Left" Height="72" Margin="849,314,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="260" FontSize="50" IsReadOnly="True" FontFamily="Juice ITC"/>
         <ComboBox x:Name="comboBIDMedecin" HorizontalAlignment="Left" Height="72" Margin="110,314,0,0" VerticalAlignment="Top" Width="260" FontSize="50" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDMedecin" SelectionChanged="comboBIDMedecin_SelectionChanged" FontFamily="Juice ITC"/>
-        <Label Content="ID medecin" HorizontalAlignment="Left" Height="80" Margin="155,234,0,0" VerticalAlignment="Top" Width="170" FontSize="50" FontWeight="Bold" FontFamily="Juice ITC" RenderTransformOrigin="0.657,1.684" Background="{x:Null}">
+        <Label Content="ID medecin" HorizontalAlignment="Left" Height="80" Margin="110,234,0,0" VerticalAlignment="Top" Width="274" FontSize="50" FontWeight="Bold" FontFamily="Juice ITC" RenderTransformOrigin="0.657,1.684" Background="{x:Null}">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF2B0000" Offset="0"/>

@@ -32,9 +32,9 @@
                 <ComboBoxItem Name="med" Content="Medecin"></ComboBoxItem>
                 <ComboBoxItem Name="prep" Content="Prepose"></ComboBoxItem>
             </ComboBox>
-            <Label Content="Nom d'utilisateur" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="24" FontWeight="Bold" Margin="5,-8,0,0"/>
-            <Label Content="Mot de passe" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="24" FontWeight="Bold" Margin="191,-8,0,0"/>
-            <Label Content="Poste occupé" HorizontalAlignment="Left" Margin="361,-8,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="24" FontWeight="Bold"/>
+            <Label Content="Nom d'utilisateur" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="18" FontWeight="Bold" Margin="0,-8,0,0" Width="164"/>
+            <Label Content="Mot de passe" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="18" FontWeight="Bold" Margin="169,-8,0,0" Width="149"/>
+            <Label Content="Poste occupé" HorizontalAlignment="Left" Margin="335,-8,0,0" VerticalAlignment="Top" FontFamily="Juice ITC" FontSize="18" FontWeight="Bold" Width="150"/>
             <Button x:Name="btnLogin" Content="VALIDER" HorizontalAlignment="Center" Margin="0,95,0,0" VerticalAlignment="Top" Width="150" Height="30" FontFamily="Juice ITC" FontSize="24" BorderThickness="2,2,2,2" Click="btnLogin_Click" Background="Black" BorderBrush="Black" FontWeight="Bold">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

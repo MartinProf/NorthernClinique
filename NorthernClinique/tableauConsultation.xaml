@@ -20,7 +20,7 @@
             </Label.Effect>
         </Label>
 
-        <Label x:Name="lblTauxOccup" Content="Taux d'occupation de l'hopital:" HorizontalAlignment="Left" Height="73" Margin="241,206,0,0" VerticalAlignment="Top" Width="495" FontSize="48" FontWeight="Bold" FontFamily="Juice ITC"/>
+        <Label x:Name="lblTauxOccup" Content="Taux d'occupation de l'hopital:" HorizontalAlignment="Left" Height="73" Margin="80,206,0,0" VerticalAlignment="Top" Width="715" FontSize="48" FontWeight="Bold" FontFamily="Juice ITC"/>
         <Label x:Name="labelTauxOcc" Content="" HorizontalAlignment="Left" Height="94" Margin="837,185,0,0" VerticalAlignment="Top" Width="187" FontSize="72" FontFamily="Bodoni MT Black">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -31,7 +31,7 @@
             </Label.Foreground>
 
         </Label>
-        <Label x:Name="lblNbMed" Content="Nombre de medecin en poste:" HorizontalAlignment="Left" Height="73" Margin="241,352,0,0" VerticalAlignment="Top" Width="495" FontSize="48" FontWeight="Bold" FontFamily="Juice ITC"/>
+        <Label x:Name="lblNbMed" Content="Nombre de medecin en poste:" HorizontalAlignment="Left" Height="73" Margin="80,352,0,0" VerticalAlignment="Top" Width="715" FontSize="48" FontWeight="Bold" FontFamily="Juice ITC"/>
         <Label x:Name="labelNombreMedecin" Content="" HorizontalAlignment="Left" Height="92" Margin="845,333,0,0" VerticalAlignment="Top" Width="134" FontSize="72" FontFamily="Bodoni MT Black">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -42,7 +42,7 @@
             </Label.Foreground>
 
         </Label>
-        <Label x:Name="lblNbPatient" Content="Nombre de patients actif:" HorizontalAlignment="Left" Height="72" Margin="241,498,0,0" VerticalAlignment="Top" Width="495" FontSize="48" FontWeight="Bold" FontFamily="Juice ITC"/>
+        <Label x:Name="lblNbPatient" Content="Nombre de patients actif:" HorizontalAlignment="Left" Height="72" Margin="80,498,0,0" VerticalAlignment="Top" Width="715" FontSize="48" FontWeight="Bold" FontFamily="Juice ITC"/>
         <Label x:Name="labelPatientActif" Content="" HorizontalAlignment="Left" Height="90" Margin="841,480,0,0" VerticalAlignment="Top" Width="138" FontSize="72" FontFamily="Bodoni MT Black">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
